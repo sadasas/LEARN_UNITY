@@ -15,11 +15,11 @@ E:/clone/LEARN_UNITY/LEARN
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59220
+63375
 Successfully changed project path to: E:/clone/LEARN_UNITY/LEARN
 E:/clone/LEARN_UNITY/LEARN
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 194.20 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 88.97 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.0f1 (c7b5465681fb)
 [Subsystems] Discovering subsystems at path D:/app/New folder/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
@@ -35,5 +35,70 @@ Initialize mono
 Mono path[0] = 'D:/app/New folder/2020.3.0f1/Editor/Data/Managed'
 Mono path[1] = 'D:/app/New folder/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/app/New folder/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56104
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.005197 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 96.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.829 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001730 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.935 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.0 MB.
+System memory in use after: 57.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1561.
+Total: 4.789700 ms (FindLiveObjects: 0.349700 ms CreateObjectMapping: 0.113500 ms MarkObjects: 4.101600 ms  DeleteObjects: 0.222100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Delegate/Scene
+  artifactKey: Guid(74bd264ec21e1004f9d644cd20d36582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Delegate/Scene using Guid(74bd264ec21e1004f9d644cd20d36582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abab9e6cc79894aeb739b0fd6445ceab') in 0.009913 seconds
+  Import took 0.369546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000706 seconds.
+  path: Assets/Delegate
+  artifactKey: Guid(4cb434a77e1b4ad4cad62723ac2f0cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Delegate using Guid(4cb434a77e1b4ad4cad62723ac2f0cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e01cef6e3eb35e32f6e42a706066a2') in 0.022150 seconds
+  Import took 0.029275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.888108 seconds.
+  path: Assets/Delegate/Scene/DELEGATE.unity
+  artifactKey: Guid(fdbdc439e057e0346b0271088fcdaa65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Delegate/Scene/DELEGATE.unity using Guid(fdbdc439e057e0346b0271088fcdaa65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ed8921bb304fb494c75ca9077cd439f') in 0.044622 seconds
+  Import took 0.051439 seconds .
+
