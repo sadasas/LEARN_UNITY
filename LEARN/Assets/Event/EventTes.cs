@@ -2,10 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventTes : MonoBehaviour
 {
-    public event EventHandler OnSpacePressed;
+    /////////1
+    public event EventHandler<OnSpacePressedEventArgs> OnSpacePressed;
+
+    public class OnSpacePressedEventArgs : EventArgs
+    {
+        public int spaceCount;
+    }
+
+    private int spaceCount;
+
+    ////////2
+    public delegate void TesEventDelegate(float f);
+
+    public event TesEventDelegate OnFloatEvent;
+
+    ///////3
+    public event Action<bool, int> OnActionEvent;
+
+    ////////4
+    public UnityEvent UnityEvent;
 
     private void Start()
     {
@@ -21,7 +41,12 @@ public class EventTes : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnSpacePressed?.Invoke(this, EventArgs.Empty);
+            spaceCount++;
+            OnSpacePressed?.Invoke(this, new OnSpacePressedEventArgs { spaceCount = spaceCount });
+
+            OnFloatEvent?.Invoke(4.5f);
+            OnActionEvent?.Invoke(true, 1);
+            UnityEvent?.Invoke();
         }
     }
 }
