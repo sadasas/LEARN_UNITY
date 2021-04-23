@@ -13,10 +13,10 @@ public class Lerp : MonoBehaviour
 
     public Transform to;
 
-    public float speed = 1;
+    public float speed = 0.1f;
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(from.rotation, to.rotation, speed * Time.time);
+        transform.rotation = Quaternion.Lerp(from.rotation, to.rotation, speed * Time.deltaTime);
     }
 }
