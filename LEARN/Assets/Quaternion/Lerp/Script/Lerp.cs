@@ -13,7 +13,7 @@ public class Lerp : MonoBehaviour
 
     public Transform to;
 
-    private float speed = 0.1f;
+    public float speed = 1;
 
     private void Update()
     {
