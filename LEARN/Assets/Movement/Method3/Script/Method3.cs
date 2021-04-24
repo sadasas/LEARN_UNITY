@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Method3 : MonoBehaviour
 {
+    //Moves the kinematic Rigidbody towards position.
+
+    //public void MovePosition(Vector3 position);
+
     public float speed;
     private Vector3 movement;
     private Rigidbody rb;
