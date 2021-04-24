@@ -41,7 +41,8 @@ public class Method4 : MonoBehaviour
 
         if (inputDir.magnitude > 0.1f)
         {
-            /*transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), 0.5f);*/
+            /* transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(inputDir), 0.5f);*/
+            rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(inputDir), 0.5f);
         }
     }
 }
