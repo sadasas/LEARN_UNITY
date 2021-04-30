@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public InventorySlot2[] inventorySlots;
 
     public InGameEquipment[] equipment;
+    public Transform player;
 
     private void Awake()
     {
@@ -37,5 +38,12 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void DropItem(InventoryItem2 item)
+    {
+        Debug.Log("drop item");
+        Instantiate(equipment[item.itemID].worldItem, player.position + new Vector3(0, 0, 2), Quaternion.identity);
+        Destroy(item.gameObject);
     }
 }

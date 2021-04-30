@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3267636669702768987}
   - component: {fileID: 4825192699683296724}
   - component: {fileID: 6498536311111723440}
+  - component: {fileID: 5279584010698623171}
   m_Layer: 5
   m_Name: Box
   m_TagString: Untagged
@@ -88,4 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da2a4de46f4c5c4586d39b02c0c1c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
+  itemID: 0
+  canvasGroup: {fileID: 0}
+  originSlot: {fileID: 0}
+--- !u!225 &5279584010698623171
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404896955960850282}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
