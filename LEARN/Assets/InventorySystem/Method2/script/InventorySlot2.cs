@@ -7,6 +7,7 @@ public class InventorySlot2 : MonoBehaviour, IDropHandler
 {
     public InventoryItem2 currentItem;
     public bool isFull = false;
+    public bool isWeaponSlot = false;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -19,17 +20,51 @@ public class InventorySlot2 : MonoBehaviour, IDropHandler
             {
                 if (!isFull)
                 {
-                    //set previous slot item parent to null because item moved to this slot
-                    OriginalSlot.isFull = false;
-                    OriginalSlot.currentItem = null;
+                    if (!isWeaponSlot && !OriginalSlot.isWeaponSlot)
+                    {
+                        //set previous slot item parent to null because item moved to this slot
+                        OriginalSlot.isFull = false;
+                        OriginalSlot.currentItem = null;
 
-                    //set this slot full
-                    isFull = true;
-                    currentItem = newItem;
+                        //set this slot full
+                        isFull = true;
+                        currentItem = newItem;
 
-                    //set parent and tranform item  to this
-                    eventData.pointerDrag.transform.SetParent(gameObject.transform);
-                    currentItem.originSlot = this.transform;
+                        //set parent and tranform item  to this
+                        eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                        currentItem.originSlot = this.transform;
+                    }
+                    else if (isWeaponSlot && !OriginalSlot.isWeaponSlot)
+                    {
+                        OriginalSlot.isFull = false;
+                        OriginalSlot.currentItem = null;
+
+                        //set this slot full
+                        isFull = true;
+                        currentItem = newItem;
+
+                        //set parent and tranform item  to this
+                        eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                        currentItem.originSlot = this.transform;
+
+                        GameManager.instance.SpawnWeapon();
+                    }
+                    else if (OriginalSlot.isWeaponSlot)
+                    {
+                        Debug.Log("WAOPNSLOT");
+                        //set previous slot item parent to null because item moved to this slot
+                        OriginalSlot.isFull = false;
+                        OriginalSlot.currentItem = null;
+
+                        //set this slot full
+                        isFull = true;
+                        currentItem = newItem;
+
+                        //set parent and tranform item  to this
+                        eventData.pointerDrag.transform.SetParent(gameObject.transform);
+                        currentItem.originSlot = this.transform;
+                        GameManager.instance.DestroyWeaopn();
+                    }
                 }
                 else if (isFull)
                 {

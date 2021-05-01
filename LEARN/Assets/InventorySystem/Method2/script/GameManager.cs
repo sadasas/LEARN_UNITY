@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public InGameEquipment[] equipment;
     public Transform player;
+    public Transform handPlayer;
 
     private void Awake()
     {
@@ -45,5 +46,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("drop item");
         Instantiate(equipment[item.itemID].worldItem, player.position + new Vector3(0, 0, 2), Quaternion.identity);
         Destroy(item.gameObject);
+    }
+
+    public void SpawnWeapon()
+    {
+        Instantiate(equipment[0].worldItem, handPlayer.position, Quaternion.identity, handPlayer);
+        equipment[0].worldItem.GetComponent<BoxCollider>().isTrigger = false;
+    }
+
+    public void DestroyWeaopn()
+    {
+        Debug.Log("DESTROY");
+        Destroy(handPlayer.GetChild(0).gameObject);
     }
 }
