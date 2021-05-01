@@ -13,7 +13,6 @@ public class AddExplotionForce : MonoBehaviour
     private void Start()
     {
         rbb = GetComponent<Rigidbody>();
-        rbb.isKinematic = true;
     }
 
     private void Update()
