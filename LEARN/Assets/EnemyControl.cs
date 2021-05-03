@@ -19,13 +19,14 @@ public class EnemyControl : MonoBehaviour
     [SerializeField]
     private int setDes;
 
-    public bool walkPointSet;
+    public bool walkPointSet = false;
 
     public bool playerInsightCast = false;
 
-    public LayerMask ob;
+    public LayerMask ob, plyr;
 
-    public float obj;
+    public float objForward, objBack, objLeft, objRight;
+    public float playerForward, playerBack, playerLeft, playerRight;
     public float distancePlayer;
 
     private Vector3 origin;
@@ -33,8 +34,10 @@ public class EnemyControl : MonoBehaviour
     private Vector3 directionleft;
     private Vector3 directionrigth;
     private Vector3 directionback;
+    private Vector3 thisPos;
     private float cd;
-    public float radius;
+
+    public float radius, inSightRange;
 
     private RaycastHit hit;
     private float pyr;
@@ -46,6 +49,7 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
+        thisPos = transform.position;
         origin = cast.transform.position;
         direction = cast.transform.forward;
         directionback = -cast.transform.forward;
@@ -84,6 +88,7 @@ public class EnemyControl : MonoBehaviour
         Gizmos.DrawWireSphere(origin + directionleft * 10, radius);
         Gizmos.DrawWireSphere(origin + directionrigth * 10, radius);
         Gizmos.DrawWireSphere(origin + directionback * 10, radius);
+        Gizmos.DrawWireSphere(thisPos, inSightRange);
     }
 
     private void OnDrawGizmosSelected()
@@ -92,38 +97,53 @@ public class EnemyControl : MonoBehaviour
 
     private void SearchPlayer()
     {
+        if (Physics.CheckSphere(transform.position, inSightRange, plyr))
+        {
+            Debug.Log("player nearby");
+        }
+        else
+        {
+            playerInsightCast = false;
+            Debug.Log("player get out");
+        }
         Debug.Log("Search Player");
 
         if (Physics.SphereCast(cast.position, radius, cast.transform.forward, out hit, 10, ob))
         {
             if (hit.collider.CompareTag("Object"))
             {
-                obj = hit.distance;
+                objForward = hit.distance;
 
                 Debug.Log("find object in forward");
             }
 
             if (hit.collider.CompareTag("Player"))
             {
-                obj = hit.distance;
+                playerForward = hit.distance;
+                if (playerForward < objForward)
+                {
+                    if (!playerInsightCast) playerInsightCast = true;
+                }
                 Debug.Log("find player in forward");
-                playerInsightCast = true;
             }
         }
         if (Physics.SphereCast(cast.position, radius, cast.transform.right, out hit, 10, ob))
         {
             if (hit.collider.CompareTag("Object"))
             {
-                obj = hit.distance;
+                objRight = hit.distance;
 
                 Debug.Log("find object in rigth");
             }
 
             if (hit.collider.CompareTag("Player"))
             {
-                obj = hit.distance;
+                playerRight = hit.distance;
                 Debug.Log("find player in right");
-                playerInsightCast = true;
+                if (playerRight < objRight)
+                {
+                    if (!playerInsightCast) playerInsightCast = true;
+                }
             }
         }
 
@@ -131,16 +151,19 @@ public class EnemyControl : MonoBehaviour
         {
             if (hit.collider.CompareTag("Object"))
             {
-                obj = hit.distance;
+                objLeft = hit.distance;
 
                 Debug.Log("find object in left");
             }
 
             if (hit.collider.CompareTag("Player"))
             {
-                obj = hit.distance;
+                playerLeft = hit.distance;
                 Debug.Log("find player in left");
-                playerInsightCast = true;
+                if (playerLeft < objLeft)
+                {
+                    if (!playerInsightCast) playerInsightCast = true;
+                }
             }
         }
 
@@ -148,16 +171,19 @@ public class EnemyControl : MonoBehaviour
         {
             if (hit.collider.CompareTag("Object"))
             {
-                obj = hit.distance;
+                objBack = hit.distance;
 
                 Debug.Log("find object in back");
             }
 
             if (hit.collider.CompareTag("Player"))
             {
-                obj = hit.distance;
+                playerBack = hit.distance;
                 Debug.Log("find player in back");
-                playerInsightCast = true;
+                if (playerBack < objBack)
+                {
+                    if (!playerInsightCast) playerInsightCast = true;
+                }
             }
         }
     }
