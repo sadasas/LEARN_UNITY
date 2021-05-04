@@ -84,11 +84,13 @@ public class EnemyControl : MonoBehaviour
         Gizmos.color = Color.red;
         Debug.DrawLine(origin, origin + direction * cd);
 
-        Gizmos.DrawWireSphere(origin + direction * 10, radius);
-        Gizmos.DrawWireSphere(origin + directionleft * 10, radius);
-        Gizmos.DrawWireSphere(origin + directionrigth * 10, radius);
+        Gizmos.DrawWireSphere(origin + direction * 1000, radius);
+        Gizmos.DrawWireSphere(origin + directionleft * 30, radius);
+        Gizmos.DrawWireSphere(origin + directionrigth * 30, radius);
         Gizmos.DrawWireSphere(origin + directionback * 10, radius);
         Gizmos.DrawWireSphere(thisPos, inSightRange);
+
+        Gizmos.DrawWireSphere(origin + direction * cd, radius);
     }
 
     private void OnDrawGizmosSelected()
