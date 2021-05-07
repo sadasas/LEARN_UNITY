@@ -129,3 +129,4 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   subScene: SubScene1
+  playerPrefab: {fileID: 7875520288532104712, guid: 22aabbe2998ca364492e85749542a79e, type: 3}

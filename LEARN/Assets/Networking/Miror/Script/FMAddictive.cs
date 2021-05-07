@@ -29,7 +29,6 @@ namespace Network.Manager
         {
             base.OnStartServer();
             serverOrClient.name = ("SERVER");
-            StartCoroutine(LoadSubScene());
         }
 
         public override void OnServerAddPlayer(NetworkConnection conn)
@@ -53,7 +52,17 @@ namespace Network.Manager
 
         public override void OnClientSceneChanged(NetworkConnection conn)
         {
-            SceneManager.MoveGameObjectToScene(dd, SceneManager.GetSceneByName(subScene));
+            GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+            foreach (GameObject go in allObjects)
+            {
+                Debug.Log("tes");
+                if (go.CompareTag("Player"))
+                {
+                    SceneManager.MoveGameObjectToScene(go, SceneManager.GetSceneByName(subScene));
+                }
+
+                GameManager.instance.SetPlayer();
+            }
         }
 
         #endregion Network Manager
