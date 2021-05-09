@@ -8,50 +8,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
-    private bool colapse = false;
-    public string subScene;
-
-    [SerializeField]
-    private NetworkIdentity playerPrefab;
+    public string nextScene;
 
     private void Awake()
     {
         instance = this;
     }
 
-    private void Update()
+    public void NextScene()
     {
-        if (FMAddictive.instance.numPlayers >= 1)
+        Debug.Log("client change scene");
+        SceneMessage msg = new SceneMessage
         {
-            Debug.Log("add subscene");
-            if (!colapse)
-            {
-                colapse = true;
-                ClientLoadSubscene();
-            }
-        }
-    }
+            sceneName = nextScene,
+            sceneOperation = SceneOperation.LoadAdditive
+        };
 
-    private void MovePlayer(SceneManager sn)
-    {
-    }
-
-    [Server]
-    private void ClientLoadSubscene()
-    {
-        NetworkIdentity networkIdentity = this.gameObject.GetComponent<NetworkIdentity>();
-        SceneMessage message = new SceneMessage { sceneName = subScene, sceneOperation = SceneOperation.LoadAdditive };
-        networkIdentity.connectionToClient.Send(message);
-        SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetSceneByName(subScene));
-    }
-
-    public void SetPlayer()
-    {
-        if (!colapse)
-        {
-            colapse = true;
-            Debug.Log("SetPlayer");
-            GameObject player = Instantiate(playerPrefab.gameObject, transform.position, transform.rotation, transform);
-        }
+        connectionToClient.Send(msg);
     }
 }

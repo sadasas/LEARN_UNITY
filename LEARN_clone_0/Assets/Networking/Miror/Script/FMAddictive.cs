@@ -8,11 +8,11 @@ namespace Network.Manager
 {
     public class FMAddictive : NetworkManager
     {
-        public string subScene;
         public static FMAddictive instance;
 
-        public GameObject localPlayer;
-        public GameObject dd;
+        private bool colapse = false;
+
+        public GameObject localPlayer, serverOrClient;
 
         [SerializeField]
         private NetworkIdentity localPlayerPrefab;
@@ -20,8 +20,7 @@ namespace Network.Manager
         [SerializeField]
         private Transform startPoint;
 
-        [SerializeField]
-        private GameObject serverOrClient;
+        public string nextScene;
 
         #region Network Manager
 
@@ -33,10 +32,6 @@ namespace Network.Manager
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
-            localPlayer = Instantiate(localPlayerPrefab.gameObject, startPoint.position, startPoint.rotation);
-            dd = localPlayer;
-            localPlayer.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
-            NetworkServer.AddPlayerForConnection(conn, localPlayer);
         }
 
         public override void OnClientConnect(NetworkConnection conn)
@@ -50,19 +45,30 @@ namespace Network.Manager
             base.OnStopServer();
         }
 
+        public override void ServerChangeScene(string newSceneName)
+        {
+            base.ServerChangeScene(newSceneName);
+            OnServerSceneChanged(newSceneName);
+        }
+
+        public override void OnServerSceneChanged(string sceneName)
+        {
+            base.OnServerSceneChanged(sceneName);
+            Debug.Log("after scene changed");
+        }
+
+        public override void OnServerReady(NetworkConnection conn)
+        {
+            localPlayer = Instantiate(localPlayerPrefab.gameObject, transform.position, Quaternion.identity);
+
+            localPlayer.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
+            NetworkServer.AddPlayerForConnection(conn, localPlayer);
+            base.OnServerReady(conn);
+        }
+
         public override void OnClientSceneChanged(NetworkConnection conn)
         {
-            GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-            foreach (GameObject go in allObjects)
-            {
-                Debug.Log("tes");
-                if (go.CompareTag("Player"))
-                {
-                    SceneManager.MoveGameObjectToScene(go, SceneManager.GetSceneByName(subScene));
-                }
-
-                GameManager.instance.SetPlayer();
-            }
+            base.OnClientSceneChanged(conn);
         }
 
         #endregion Network Manager
@@ -78,16 +84,24 @@ namespace Network.Manager
         {
         }
 
-        #endregion MonoBehaviour
-
-        private IEnumerator LoadSubScene()
+        private void Update()
         {
-            yield return SceneManager.LoadSceneAsync(subScene, LoadSceneMode.Additive);
+            if (numPlayers >= 1)
+            {
+                if (!colapse)
+                {
+                    colapse = true;
+                    ServerChangeScene(nextScene);
+                }
+            }
         }
 
-        private IEnumerator UnloadScene()
+        #endregion MonoBehaviour
+
+        private void NextScene()
         {
-            yield return SceneManager.LoadSceneAsync(subScene, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+            SceneManager.MoveGameObjectToScene(localPlayer, SceneManager.GetSceneByName(nextScene));
         }
     }
 }
