@@ -211,11 +211,15 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 7401127430763900704, guid: 2fd58d36b5d775b4392ef7db2063f8fc, type: 3}
   - {fileID: 9182937296986536267, guid: 22aabbe2998ca364492e85749542a79e, type: 3}
-  localPlayer: {fileID: 0}
+  - {fileID: 5985894294627923909, guid: d18553fee5ef52d418571f96cee2044c, type: 3}
   serverOrClient: {fileID: 340961342}
+  localPlayer: {fileID: 0}
   localPlayerPrefab: {fileID: 6839142800014464048, guid: 2fd58d36b5d775b4392ef7db2063f8fc, type: 3}
   startPoint: {fileID: 965957369}
-  nextScene: 2
+  nextScene:
+  - 2
+  - 3
+  playerPrefabb: {fileID: 5985894294627923909, guid: d18553fee5ef52d418571f96cee2044c, type: 3}
 --- !u!114 &12166441
 MonoBehaviour:
   m_ObjectHideFlags: 0

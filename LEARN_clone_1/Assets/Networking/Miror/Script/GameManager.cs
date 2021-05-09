@@ -2,6 +2,7 @@ using Mirror;
 using Network.Manager;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,17 +14,5 @@ public class GameManager : NetworkBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    public void NextScene()
-    {
-        Debug.Log("client change scene");
-        SceneMessage msg = new SceneMessage
-        {
-            sceneName = nextScene,
-            sceneOperation = SceneOperation.LoadAdditive
-        };
-
-        connectionToClient.Send(msg);
     }
 }

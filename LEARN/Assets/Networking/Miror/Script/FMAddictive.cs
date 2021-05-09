@@ -6,13 +6,18 @@ using UnityEngine.SceneManagement;
 
 namespace Network.Manager
 {
+    public struct PlayerMessage : NetworkMessage
+    {
+        public string name;
+    }
+
     public class FMAddictive : NetworkManager
     {
         public static FMAddictive instance;
 
-        private bool colapse = false;
+        private bool colapse = false, isMap = false, colapse1 = false, colapse2 = false;
 
-        public GameObject localPlayer, serverOrClient;
+        public GameObject serverOrClient, localPlayer, player;
 
         [SerializeField]
         private NetworkIdentity localPlayerPrefab;
@@ -20,7 +25,8 @@ namespace Network.Manager
         [SerializeField]
         private Transform startPoint;
 
-        public string nextScene;
+        public string[] nextScene;
+        public GameObject playerPrefabb;
 
         #region Network Manager
 
@@ -28,6 +34,7 @@ namespace Network.Manager
         {
             base.OnStartServer();
             serverOrClient.name = ("SERVER");
+            NetworkServer.RegisterHandler<PlayerMessage>(OnCreateCharacter);
         }
 
         public override void OnServerAddPlayer(NetworkConnection conn)
@@ -49,10 +56,18 @@ namespace Network.Manager
         {
             base.ServerChangeScene(newSceneName);
             OnServerSceneChanged(newSceneName);
+            OnServerChangeScene(newSceneName);
+            OnClientChangeScene(newSceneName, SceneOperation.Normal, false);
+        }
+
+        public override void OnServerChangeScene(string newSceneName)
+        {
+            base.OnServerChangeScene(newSceneName);
         }
 
         public override void OnServerSceneChanged(string sceneName)
         {
+            localPlayer = null;
             base.OnServerSceneChanged(sceneName);
             Debug.Log("after scene changed");
         }
@@ -61,14 +76,35 @@ namespace Network.Manager
         {
             localPlayer = Instantiate(localPlayerPrefab.gameObject, transform.position, Quaternion.identity);
 
-            localPlayer.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
+            localPlayer.name = $"{localPlayerPrefab.gameObject.name} [connId={conn.connectionId}]";
             NetworkServer.AddPlayerForConnection(conn, localPlayer);
+
             base.OnServerReady(conn);
+        }
+
+        public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
+        {
+            Destroy(player);
+            player = null;
+            Debug.Log("destroy p;layer");
+            base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
         }
 
         public override void OnClientSceneChanged(NetworkConnection conn)
         {
+            PlayerMessage characterMessage = new PlayerMessage
+            {
+            };
+            conn.Send(characterMessage);
             base.OnClientSceneChanged(conn);
+
+            Debug.Log("Client Changed Scene Connected");
+        }
+
+        private void OnCreateCharacter(NetworkConnection conn, PlayerMessage message)
+        {
+            player = Instantiate(playerPrefabb, transform.position, transform.rotation, transform);
+            NetworkServer.Spawn(player, conn);
         }
 
         #endregion Network Manager
@@ -86,22 +122,25 @@ namespace Network.Manager
 
         private void Update()
         {
-            if (numPlayers >= 1)
+            if (numPlayers >= 2)
             {
                 if (!colapse)
                 {
+                    isMap = true;
                     colapse = true;
-                    ServerChangeScene(nextScene);
+                    ServerChangeScene(nextScene[0]);
+                }
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (!colapse1)
+                {
+                    colapse1 = true;
+                    ServerChangeScene(nextScene[1]);
                 }
             }
         }
 
         #endregion MonoBehaviour
-
-        private void NextScene()
-        {
-            SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
-            SceneManager.MoveGameObjectToScene(localPlayer, SceneManager.GetSceneByName(nextScene));
-        }
     }
 }

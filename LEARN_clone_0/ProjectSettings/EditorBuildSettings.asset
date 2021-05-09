@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Networking/Miror/Scene/1.unity
     guid: 9471fd449abe8554599c0c985b9f289a
   - enabled: 1
-    path: Assets/Networking/Miror/Scene/SubScene2.unity
+    path: Assets/Networking/Miror/Scene/3.unity
     guid: 954e204fac0060b4286337b095c69fc9
   m_configObjects: {}
