@@ -128,5 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  nextScene: 2
-  playerPrefab: {fileID: 5985894294627923909, guid: d18553fee5ef52d418571f96cee2044c, type: 3}
+  nextScene1: 3

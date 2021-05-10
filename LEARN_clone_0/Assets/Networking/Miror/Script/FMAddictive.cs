@@ -13,6 +13,7 @@ namespace Network.Manager
 
     public class FMAddictive : NetworkManager
     {
+        private NetworkIdentity idPlayer;
         public static FMAddictive instance;
 
         private bool colapse = false, isMap = false, colapse1 = false, colapse2 = false;
@@ -52,6 +53,11 @@ namespace Network.Manager
             base.OnStopServer();
         }
 
+        public override void OnClientNotReady(NetworkConnection conn)
+        {
+            Debug.Log("Client Not Ready");
+        }
+
         public override void ServerChangeScene(string newSceneName)
         {
             base.ServerChangeScene(newSceneName);
@@ -67,7 +73,6 @@ namespace Network.Manager
 
         public override void OnServerSceneChanged(string sceneName)
         {
-            localPlayer = null;
             base.OnServerSceneChanged(sceneName);
             Debug.Log("after scene changed");
         }
@@ -84,8 +89,15 @@ namespace Network.Manager
 
         public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
         {
-            Destroy(player);
-            player = null;
+            GameObject[] allObject = UnityEngine.Object.FindObjectsOfType<GameObject>();
+
+            foreach (GameObject plyr in allObject)
+            {
+                if (plyr.CompareTag("Player"))
+                {
+                    Destroy(plyr);
+                }
+            }
             Debug.Log("destroy p;layer");
             base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
         }
@@ -95,6 +107,7 @@ namespace Network.Manager
             PlayerMessage characterMessage = new PlayerMessage
             {
             };
+
             conn.Send(characterMessage);
             base.OnClientSceneChanged(conn);
 
@@ -103,7 +116,8 @@ namespace Network.Manager
 
         private void OnCreateCharacter(NetworkConnection conn, PlayerMessage message)
         {
-            player = Instantiate(playerPrefabb, transform.position, transform.rotation, transform);
+            player = Instantiate(playerPrefabb, transform.position, transform.rotation);
+
             NetworkServer.Spawn(player, conn);
         }
 
@@ -122,6 +136,12 @@ namespace Network.Manager
 
         private void Update()
         {
+            Scene m_Scene = SceneManager.GetActiveScene();
+
+            if (m_Scene.name == nextScene[1])
+            {
+                Debug.Log("MAP 2");
+            }
             if (numPlayers >= 2)
             {
                 if (!colapse)
@@ -129,14 +149,6 @@ namespace Network.Manager
                     isMap = true;
                     colapse = true;
                     ServerChangeScene(nextScene[0]);
-                }
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                if (!colapse1)
-                {
-                    colapse1 = true;
-                    ServerChangeScene(nextScene[1]);
                 }
             }
         }
