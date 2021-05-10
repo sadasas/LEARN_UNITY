@@ -12,7 +12,7 @@ namespace Mirror
     [HelpURL("https://mirror-networking.com/docs/Articles/Components/NetworkManagerHUD.html")]
     public class NetworkManagerHUD : MonoBehaviour
     {
-        NetworkManager manager;
+        private NetworkManager manager;
 
         [Obsolete("showGUI will be removed unless someone has a valid use case. Simply use or don't use the HUD component.")]
         public bool showGUI = true;
@@ -20,12 +20,12 @@ namespace Mirror
         public int offsetX;
         public int offsetY;
 
-        void Awake()
+        private void Awake()
         {
             manager = GetComponent<NetworkManager>();
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
 #pragma warning disable 618
             if (!showGUI) return;
@@ -59,7 +59,7 @@ namespace Mirror
             GUILayout.EndArea();
         }
 
-        void StartButtons()
+        private void StartButtons()
         {
             if (!NetworkClient.active)
             {
@@ -103,7 +103,7 @@ namespace Mirror
             }
         }
 
-        void StatusLabels()
+        private void StatusLabels()
         {
             // server / client status message
             if (NetworkServer.active)
@@ -116,7 +116,7 @@ namespace Mirror
             }
         }
 
-        void StopButtons()
+        private void StopButtons()
         {
             // stop host if host mode
             if (NetworkServer.active && NetworkClient.isConnected)

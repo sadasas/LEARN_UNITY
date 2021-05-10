@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Networking/Miror/Scene/2.unity
+    path: Assets/Networking/Miror/Example1/Scene/2.unity
     guid: 654d8e8a9bd41b84b9b514137e7ba066
   - enabled: 1
-    path: Assets/Networking/Miror/Scene/1.unity
+    path: Assets/Networking/Miror/Example1/Scene/1.unity
     guid: 9471fd449abe8554599c0c985b9f289a
   - enabled: 1
-    path: Assets/Networking/Miror/Scene/3.unity
+    path: Assets/Networking/Miror/Example1/Scene/3.unity
     guid: 954e204fac0060b4286337b095c69fc9
+  - enabled: 1
+    path: Assets/Mirror/Examples/Room/Scenes/OfflineScene.unity
+    guid: 9e6f14982412b2545a0911ebaaa46a23
+  - enabled: 1
+    path: Assets/Mirror/Examples/Room/Scenes/OnlineScene.unity
+    guid: d7a6763559b31854586c9e49916273ef
+  - enabled: 1
+    path: Assets/Mirror/Examples/Room/Scenes/RoomScene.unity
+    guid: 48478f4d522f96945b8396f376299d3a
   m_configObjects: {}
