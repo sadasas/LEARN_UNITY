@@ -48,7 +48,7 @@ public class GameManager : NetworkBehaviour
     {
     }
 
-    [Server]
+    [Command]
     private void NextScene()
     {
         SceneManager.LoadSceneAsync(nextScene1);

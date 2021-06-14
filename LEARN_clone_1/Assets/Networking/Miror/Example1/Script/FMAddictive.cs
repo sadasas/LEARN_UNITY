@@ -89,15 +89,15 @@ namespace Network.Manager
 
         public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
         {
-            GameObject[] allObject = UnityEngine.Object.FindObjectsOfType<GameObject>();
+            /*  GameObject[] allObject = UnityEngine.Object.FindObjectsOfType<GameObject>();
 
-            foreach (GameObject plyr in allObject)
-            {
-                if (plyr.CompareTag("Player"))
-                {
-                    Destroy(plyr);
-                }
-            }
+              foreach (GameObject plyr in allObject)
+              {
+                  if (plyr.CompareTag("Player"))
+                  {
+                      NetworkServer.Destroy(plyr);
+                  }
+              }*/
             Debug.Log("destroy p;layer");
             base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
         }
@@ -142,7 +142,7 @@ namespace Network.Manager
             {
                 Debug.Log("MAP 2");
             }
-            if (numPlayers >= 2)
+            if (numPlayers >= 1)
             {
                 if (!colapse)
                 {

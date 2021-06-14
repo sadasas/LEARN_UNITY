@@ -197,8 +197,8 @@ MonoBehaviour:
   serverTickRate: 30
   serverBatching: 1
   serverBatchInterval: 0
-  offlineScene: Assets/Networking/Miror/Scene/2.unity
-  onlineScene: Assets/Networking/Miror/Scene/1.unity
+  offlineScene: 
+  onlineScene: Assets/Networking/Miror/Example1/Scene/1.unity
   transport: {fileID: 12166439}
   networkAddress: localhost
   maxConnections: 100
@@ -214,6 +214,7 @@ MonoBehaviour:
   - {fileID: 5985894294627923909, guid: d18553fee5ef52d418571f96cee2044c, type: 3}
   serverOrClient: {fileID: 340961342}
   localPlayer: {fileID: 0}
+  player: {fileID: 0}
   localPlayerPrefab: {fileID: 6839142800014464048, guid: 2fd58d36b5d775b4392ef7db2063f8fc, type: 3}
   startPoint: {fileID: 965957369}
   nextScene:
