@@ -1,43 +1,76 @@
+using FSM.AbstrackFMSCode;
+using FSM.NPCCode;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class FiniteStateMachine : MonoBehaviour
+namespace FSM.FSMCode
 {
-    [SerializeField]
-    private AbstracFMS _startingState;
-
-    private AbstracFMS _currentState;
-
-    private void Awake()
+    public class FiniteStateMachine : MonoBehaviour
     {
-        _currentState = null;
-    }
+        private AbstracFMS _currentState;
 
-    private void Start()
-    {
-        if (_startingState != null)
+        [SerializeField]
+        private List<AbstracFMS> validStates;
+
+        [SerializeField]
+        private Dictionary<FSMStateType, AbstracFMS> _fsmStates;
+
+        private void Awake()
         {
-            EnterState(_startingState);
+            _currentState = null;
+            _fsmStates = new Dictionary<FSMStateType, AbstracFMS>();
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            NPC npc = GetComponent<NPC>();
+
+            foreach (AbstracFMS state in validStates)
+            {
+                state.SetNavMeshAgent(navMeshAgent);
+                state.SetNPC(npc);
+                state.SetFSM(this);
+                _fsmStates.Add(state.StateType, state);
+            }
         }
-    }
 
-    private void Update()
-    {
-        if (_currentState != null) _currentState.UpdateState();
-    }
-
-    #region STATE MANAGEMENT
-
-    public void EnterState(AbstracFMS nextState)
-    {
-        if (nextState == null)
+        private void Start()
         {
-            return;
+            EnterState(FSMStateType.IDLE);
         }
-        _currentState = nextState;
-        _currentState.EnterState();
-    }
 
-    #endregion STATE MANAGEMENT
+        private void Update()
+        {
+            if (_currentState != null) _currentState.UpdateState();
+        }
+
+        #region STATE MANAGEMENT
+
+        public void EnterState(AbstracFMS nextState)
+        {
+            if (nextState == null)
+            {
+                return;
+            }
+
+            if (_currentState != null)
+            {
+                _currentState.ExitState();
+            }
+            _currentState = nextState;
+            _currentState.EnterState();
+        }
+
+        public void EnterState(FSMStateType stateType)
+        {
+            if (_fsmStates.ContainsKey(stateType))
+            {
+                Debug.Log("enter");
+                AbstracFMS nextstate = _fsmStates[stateType];
+                // _currentState.ExitState();
+                EnterState(nextstate);
+            }
+        }
+
+        #endregion STATE MANAGEMENT
+    }
 }
