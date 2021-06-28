@@ -19,6 +19,7 @@ namespace FSM.AbstrackFMSCode
     {
         IDLE,
         PATROL,
+        CHASE,
     };
 
     public abstract class AbstracFMS : ScriptableObject

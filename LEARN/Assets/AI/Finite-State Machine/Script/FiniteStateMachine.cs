@@ -40,7 +40,10 @@ namespace FSM.FSMCode
 
         private void Update()
         {
-            if (_currentState != null) _currentState.UpdateState();
+            if (_currentState != null)
+            {
+                _currentState.UpdateState();
+            }
         }
 
         #region STATE MANAGEMENT

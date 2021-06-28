@@ -27,7 +27,7 @@ namespace FSM.PatrolStatCode
 
                 if (patrolPoint == null || patrolPoint.Length == 0)
                 {
-                    Debug.Log("PATROLSTATE = FAILED TO GRAB PATROL POINT FROM NPC");
+                    Debug.Log("PATROL STATE = Failed to grab patrol point npc");
                 }
                 else
                 {
