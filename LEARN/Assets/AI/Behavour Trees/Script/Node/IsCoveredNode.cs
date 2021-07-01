@@ -18,6 +18,7 @@ public class IsCoveredNode : Node
         RaycastHit hit;
         if (Physics.Raycast(origin.position, target.position - origin.position, out hit))
         {
+            Debug.Log("IS COVERED?");
             if (hit.collider.transform != target)
             {
                 return NodeState.SUCCES;

@@ -18,6 +18,7 @@ public class IsCoverAvailableNode : Node
 
     public override NodeState Evaluate()
     {
+        Debug.Log("SEARCH COVER");
         Transform bestSpot = FindBestCoverSpot();
         ai.SetBestCoverSpot(bestSpot);
         return bestSpot != null ? NodeState.SUCCES : NodeState.FAILURE;
@@ -25,6 +26,13 @@ public class IsCoverAvailableNode : Node
 
     private Transform FindBestCoverSpot()
     {
+        if (ai.GetBestCover() != null)
+        {
+            if (CheckIfCoverIsValid(ai.GetBestCover()))
+            {
+                return ai.GetBestCover();
+            }
+        }
         float minAngle = 90;
         Transform bestSpot = null;
         for (int i = 0; i < availableCover.Length; i++)

@@ -17,7 +17,7 @@ public class GoToCoverNode : Node
     public override NodeState Evaluate()
     {
         Transform cover = ai.GetBestCover();
-
+        Debug.Log("GO TO CPVER");
         if (cover == null)
         {
             return NodeState.FAILURE;

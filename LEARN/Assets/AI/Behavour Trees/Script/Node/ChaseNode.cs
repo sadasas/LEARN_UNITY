@@ -18,6 +18,7 @@ public class ChaseNode : Node
 
     public override NodeState Evaluate()
     {
+        Debug.Log("CHASE PLAYER");
         float distance = Vector3.Distance(target.position, agent.transform.position);
         if (distance > 0.2f)
         {
