@@ -1,40 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Linq.Expressions;
 using UnityEngine;
 
-public class Sequence : Node
+public class Selector : Node
 {
     protected List<Node> nodes = new List<Node>();
 
-    public Sequence(List<Node> nodes)
+    public Selector(List<Node> nodes)
     {
         this.nodes = nodes;
     }
 
     public override NodeState Evaluate()
     {
-        bool isAnyNodeRunning = false;
         foreach (var node in nodes)
         {
+            Debug.Log("SELECT");
             switch (node.Evaluate())
             {
                 case NodeState.RUNNING:
-                    isAnyNodeRunning = true;
-                    break;
+                    _nodeState = NodeState.RUNNING;
+                    Debug.Log("RUNNING");
+                    return _nodeState;
 
                 case NodeState.SUCCES:
-                    break;
+                    _nodeState = NodeState.SUCCES;
+                    Debug.Log("SUCCESS");
+                    return _nodeState;
 
                 case NodeState.FAILURE:
-                    _nodeState = NodeState.FAILURE;
-                    return _nodeState;
+                    Debug.Log("FAILURE");
+                    break;
 
                 default:
                     break;
             }
         }
-        _nodeState = isAnyNodeRunning ? NodeState.RUNNING : NodeState.SUCCES;
+        _nodeState = NodeState.FAILURE;
         return _nodeState;
     }
 }
