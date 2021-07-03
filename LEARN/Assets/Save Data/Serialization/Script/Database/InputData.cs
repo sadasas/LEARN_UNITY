@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -20,10 +21,29 @@ public class InputData : SaveDaata
 
     public void Save()
     {
+        //default
         dataPlayer.nama = name.text.ToString();
-        dataPlayer.level = "0";
-        dataPlayer.experience = "0";
+        dataPlayer.coin = 1000;
+        dataPlayer.experience = 0;
         tier = Tier.Rookie;
+        SaveGame();
+    }
+
+    public void Reset()
+    {
+        ResetData();
+    }
+
+    public void AddXP()
+    {
+        dataPlayer.experience += 100;
+        SaveGame();
+    }
+
+    public void AddCoin()
+    {
+        dataPlayer.coin += 10;
+
         SaveGame();
     }
 }

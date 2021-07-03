@@ -18,8 +18,8 @@ internal class SaveData
 public struct DataPlayer
 {
     public String nama;
-    public String level;
-    public String experience;
+    public int coin;
+    public int experience;
 }
 
 [Serializable]
@@ -45,14 +45,13 @@ public enum Exist
 
 public abstract class SaveDaata
 {
-    protected DataPlayer dataPlayer;
+    protected static DataPlayer dataPlayer;
 
-    protected Tier tier;
+    protected static Tier tier;
 
     protected Skin skin;
 
     protected Exist isHaveData;
-    //protected Exist _isHaveData { get { return isHaveData; } }
 
     public abstract Exist Update();
 
@@ -86,5 +85,17 @@ public abstract class SaveDaata
             isHaveData = Exist.NotHaveData;
             Debug.Log("LOAD DATA: No data exist");
         }
+    }
+
+    public void ResetData()
+    {
+        if (File.Exists(Application.persistentDataPath
+                      + "/MySaveData.dat"))
+        {
+            File.Delete(Application.persistentDataPath
+                              + "/MySaveData.dat");
+        }
+        else
+            Debug.Log("RESET DATA: No data exist");
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,24 +14,23 @@ public class SLData : MonoBehaviour
     [SerializeField] private Text namePlayer;
 
     //Output
-    [SerializeField] private Text namePlayerDisplay, expPlayerDisplay;
+    [SerializeField] private Text namePlayerDisplay, expPlayerDisplay, coinPlayerDisplay;
 
     [SerializeField] private GameObject[] tierDisplay, HUD;
 
     private void Start()
     {
-        outputData.Load();
+        UpdateData();
     }
 
     private void Awake()
     {
         inputData = new InputData(namePlayer);
-        outputData = new OutputData(HUD, namePlayerDisplay, expPlayerDisplay, tierDisplay);
+        outputData = new OutputData(HUD, namePlayerDisplay, expPlayerDisplay, tierDisplay, coinPlayerDisplay);
     }
 
     private void Update()
     {
-        database.Update();
     }
 
     public void SaveDataPlayer()
@@ -41,5 +41,28 @@ public class SLData : MonoBehaviour
     public void LoadDataPlayer()
     {
         outputData.Load();
+    }
+
+    public void ReplacedButton()
+    {
+        inputData.Reset();
+        UpdateData();
+    }
+
+    public void UpdateData()
+    {
+        outputData.Update();
+    }
+
+    public void AddXPPlayer()
+    {
+        inputData.AddXP();
+        LoadDataPlayer();
+    }
+
+    public void AddCoinlayer()
+    {
+        inputData.AddCoin();
+        LoadDataPlayer();
     }
 }

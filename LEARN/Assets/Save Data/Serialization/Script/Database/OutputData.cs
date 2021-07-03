@@ -7,36 +7,42 @@ public class OutputData : SaveDaata
 {
     private GameObject[] HUD;
 
-    private Text name, exp;
+    private Text name, exp, coin;
 
     private GameObject[] tierr;
 
-    public OutputData(GameObject[] HUD, Text nameDisplay, Text expDisplay, GameObject[] tierr)
+    public OutputData(GameObject[] HUD, Text nameDisplay, Text expDisplay, GameObject[] tierr, Text coin)
     {
         this.HUD = HUD;
         this.name = nameDisplay;
         this.exp = expDisplay;
         this.tierr = tierr;
+        this.coin = coin;
     }
 
     public override Exist Update()
     {
+        LoadGame();
         Load();
-        if (name == null || exp == null)
+        if (isHaveData == Exist.NotHaveData)
         {
             HUD[0].SetActive(true);
             HUD[1].SetActive(false);
+
             return isHaveData = Exist.NotHaveData;
         }
-        HUD[1].SetActive(true);
+
         HUD[0].SetActive(false);
+        HUD[1].SetActive(true);
+
         return isHaveData = Exist.HaveData;
     }
 
     public void Load()
     {
         name.text = dataPlayer.nama;
-        exp.text = dataPlayer.experience;
+        exp.text = dataPlayer.experience.ToString();
+        coin.text = dataPlayer.coin.ToString();
 
         switch (tier)
         {
@@ -55,6 +61,5 @@ public class OutputData : SaveDaata
             default:
                 break;
         }
-        // expDisplay.text =  database.dataPlayer.level;
     }
 }
