@@ -3020,7 +3020,6 @@ GameObject:
   - component: {fileID: 5593928476246477502}
   - component: {fileID: 5593928476246477489}
   - component: {fileID: 5593928476246477492}
-  - component: {fileID: 5593928476246477493}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3040,37 +3039,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616ffb8b01b39334c9e958b697222c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  database: {fileID: 5593928476246477493}
-  HUD:
-  - {fileID: 1991697440}
-  - {fileID: 1144608626}
-  name: {fileID: 5593928476122910038}
-  nameDisplay: {fileID: 1152253472}
-  expDisplay: {fileID: 113706738}
+  namePlayer: {fileID: 5593928476122910038}
+  namePlayerDisplay: {fileID: 1152253472}
+  expPlayerDisplay: {fileID: 113706738}
   tierDisplay:
   - {fileID: 180691565}
   - {fileID: 1685633949}
   - {fileID: 620037655}
---- !u!114 &5593928476246477493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5593928476246477491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065ca711e70337b438f7243b56f3f900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataPlayer:
-    nama: 
-    level: 
-    experience: 
-  tier: 0
-  skin:
-    nameSkin: 
-    quantity: 
 --- !u!224 &5593928476246477500
 RectTransform:
   m_ObjectHideFlags: 0

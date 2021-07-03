@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [Serializable]
 internal class SaveData
@@ -50,8 +51,10 @@ public abstract class SaveDaata
 
     protected Skin skin;
 
-    private Exist isHaveData;
-    protected Exist _isHaveData { get { return isHaveData; } }
+    protected Exist isHaveData;
+    //protected Exist _isHaveData { get { return isHaveData; } }
+
+    public abstract Exist Update();
 
     public void SaveGame()
     {

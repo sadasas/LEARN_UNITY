@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Database", menuName = "Database/ff", order = 2)]
 public class InputData : SaveDaata
 {
     private Text name;
@@ -11,6 +11,11 @@ public class InputData : SaveDaata
     public InputData(Text name)
     {
         this.name = name;
+    }
+
+    public override Exist Update()
+    {
+        return isHaveData;
     }
 
     public void Save()
