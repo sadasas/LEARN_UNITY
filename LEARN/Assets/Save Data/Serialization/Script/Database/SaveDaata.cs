@@ -42,16 +42,16 @@ public enum Exist
     NotHaveData,
 }
 
-public class SaveDaata : MonoBehaviour
+public abstract class SaveDaata
 {
-    public DataPlayer dataPlayer;
+    protected DataPlayer dataPlayer;
 
-    public Tier tier;
+    protected Tier tier;
 
-    public Skin skin;
+    protected Skin skin;
 
-    protected Exist isHaveData;
-    public Exist _isHaveData { get { return isHaveData; } }
+    private Exist isHaveData;
+    protected Exist _isHaveData { get { return isHaveData; } }
 
     public void SaveGame()
     {
@@ -64,10 +64,6 @@ public class SaveDaata : MonoBehaviour
         //data.playerSkin.Add(skin);
         bf.Serialize(file, data);
         file.Close();
-    }
-
-    private void Update()
-    {
     }
 
     public void LoadGame()
