@@ -5,10 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class _Item : MonoBehaviour
-{    //display
+{
+    //display
+
     [SerializeField] private Text nameItem;
     [SerializeField] private Text costItem;
     [SerializeField] private Text typeItem;
+
+    //value
 
     public String type;
     public String name;

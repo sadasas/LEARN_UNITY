@@ -10,8 +10,20 @@ public class CreateItem : DatabaseShop
 
     public void AddItem()
     {
-        item = new Item("wahyu", TypeItem.RARE, 1000);
+        item = new Item("Pedang", TypeItem.RARE, 1000);
         allitem.allItemInSHOP.Add(item);
+    }
+
+    public void DefaultItem()
+    {
+        item = new Item("Pedang", TypeItem.RARE, 1000);
+        allitem.allItemInSHOP.Add(item);
+        item = new Item("tt", TypeItem.RARE, 1000);
+        allitem.allItemInSHOP.Add(item);
+        item = new Item("dd", TypeItem.RARE, 1000);
+        allitem.allItemInSHOP.Add(item);
+        /* item = new Item("dd", TypeItem.RARE, 1000);
+         allitem.allItemInSHOP.Add(item);*/
     }
 
     public override DatabaseAdded CeckItemDatabase()

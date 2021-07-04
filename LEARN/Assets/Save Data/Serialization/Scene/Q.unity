@@ -422,12 +422,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77280094}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b536b787f0b006c46a8b6eda0bdf416d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabGroup: {fileID: 0}
+  tabGroup: {fileID: 704407347}
   background: {fileID: 0}
 --- !u!1 &88376341
 GameObject:
@@ -1586,6 +1586,7 @@ MonoBehaviour:
   - {fileID: 1144608626}
   - {fileID: 1825896012}
   - {fileID: 117129602}
+  - {fileID: 2080327522}
 --- !u!1 &726363862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
+    m_Left: 30
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
@@ -4591,6 +4592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPoint: {fileID: 2080327523}
+  pointSpawnPrefab: {fileID: 746781948859882951, guid: 1c9e9f5ae814f5e478aa98b8a6e1dec7, type: 3}
   itemPrefab:
   - {fileID: 1315798965452469489, guid: 5a9b7445986889b4d842d979d2380e8e, type: 3}
   - {fileID: 1315798965452469489, guid: b54507ca7f6fb2c4bae8f29261e7ed01, type: 3}
