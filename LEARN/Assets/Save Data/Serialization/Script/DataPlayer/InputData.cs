@@ -26,6 +26,13 @@ public class InputData : SaveDaata
         dataPlayer.coin = 1000;
         dataPlayer.experience = 0;
         tier = Tier.Rookie;
+
+        SaveGame();
+    }
+
+    public void addInventory(Item item)
+    {
+        inventory.itemPlayer.Add(item);
         SaveGame();
     }
 
@@ -44,6 +51,12 @@ public class InputData : SaveDaata
     {
         dataPlayer.coin += 10;
 
+        SaveGame();
+    }
+
+    public void LostCoin(int itemCost)
+    {
+        dataPlayer.coin -= itemCost;
         SaveGame();
     }
 }

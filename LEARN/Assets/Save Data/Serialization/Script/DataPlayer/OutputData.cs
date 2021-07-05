@@ -22,6 +22,7 @@ public class OutputData : SaveDaata
 
     public override Exist Update()
     {
+        base.Update();
         LoadGame();
         Load();
         if (isHaveData == Exist.NotHaveData)

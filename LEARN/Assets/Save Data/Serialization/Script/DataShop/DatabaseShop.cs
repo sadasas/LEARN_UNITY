@@ -3,20 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public struct Item
 {
     public String name;
+    public String detail;
     public TypeItem type;
     public int cost;
+    public Sprite image;
 
-    public Item(String name, TypeItem type, int cost)
+    public Item(String name, TypeItem type, int cost, Sprite image, String detail)
     {
         this.name = name;
         this.type = type;
         this.cost = cost;
+        this.image = image;
+        this.detail = detail;
     }
 }
 
+[Serializable]
 public enum TypeItem
 {
     COMMON,
@@ -24,12 +30,14 @@ public enum TypeItem
     RARE,
 }
 
+[Serializable]
 public enum DatabaseAdded
 {
     DATABASE_AXIST,
     DATABASE_NOT_EXIST,
 }
 
+[Serializable]
 public struct ItemInShop
 {
     public List<Item> allItemInSHOP;

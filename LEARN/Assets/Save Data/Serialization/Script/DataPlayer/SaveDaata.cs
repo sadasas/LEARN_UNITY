@@ -11,7 +11,7 @@ internal class SaveData
 {
     public DataPlayer playerData;
     public Tier playerTier;
-    public List<Skin> playerSkin;
+    public Inventory playerInventory;
 }
 
 [Serializable]
@@ -23,10 +23,9 @@ public struct DataPlayer
 }
 
 [Serializable]
-public struct Skin
+public struct Inventory
 {
-    public String nameSkin;
-    public String quantity;
+    public List<Item> itemPlayer;
 }
 
 [Serializable]
@@ -46,14 +45,23 @@ public enum Exist
 public abstract class SaveDaata
 {
     protected static DataPlayer dataPlayer;
+    public DataPlayer _dataPlayer { get { return dataPlayer; } }
 
     protected static Tier tier;
-
-    protected Skin skin;
+    protected static Inventory inventory;
+    public Inventory _inventory { get { return inventory; } }
 
     protected Exist isHaveData;
 
-    public abstract Exist Update();
+    public virtual Exist Update()
+    {
+        if (inventory.itemPlayer == null)
+        {
+            inventory.itemPlayer = new List<Item>();
+            Debug.Log("LIST ITEM: added");
+        }
+        return isHaveData = Exist.NotHaveData;
+    }
 
     public void SaveGame()
     {
@@ -63,7 +71,7 @@ public abstract class SaveDaata
         SaveData data = new SaveData();
         data.playerData = dataPlayer;
         data.playerTier = tier;
-        //data.playerSkin.Add(skin);
+        data.playerInventory = inventory;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -79,6 +87,7 @@ public abstract class SaveDaata
             file.Close();
             dataPlayer = data.playerData;
             tier = data.playerTier;
+            inventory = data.playerInventory;
         }
         else
         {
