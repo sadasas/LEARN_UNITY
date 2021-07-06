@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DataShop : MonoBehaviour
 {
-    public CreateItem createItem;
+    private CreateItem createItem;
 
     public List<Item> itemInShop = new List<Item>();
 
@@ -13,41 +13,24 @@ public class DataShop : MonoBehaviour
 
     [SerializeField] private GameObject pointSpawnPrefab;
 
-    private GameObject pointSpawnItem;
-
-    [SerializeField] private Sprite pedangEskalibur;
-    [SerializeField] private Sprite celuritSakti;
-    [SerializeField] private Sprite sevenblestLur;
-    [SerializeField] private Sprite spearMagic;
-
-    [SerializeField] private String detailPedangEskalibur;
-    [SerializeField] private String detailceluritSakti;
-    [SerializeField] private String detailsevenblestLur;
-    [SerializeField] private String detailspearMagic;
-
     [SerializeField] private List<GameObject> itemPrefab = new List<GameObject>();
+
+    private GameObject pointSpawnItem;
 
     private void Awake()
     {
-        createItem = new CreateItem(pedangEskalibur, celuritSakti, sevenblestLur, spearMagic, detailPedangEskalibur, detailceluritSakti, detailsevenblestLur, detailspearMagic);
-        createItem.CeckItemDatabase();
-        createItem.DefaultItem();
-        itemInShop = createItem._itemAvailable;
+        createItem = GetComponent<CreateItem>();
         PointSpawnItem();
     }
 
     private void Start()
     {
+        itemInShop = createItem._data.allItemInSHop;
         DisplayItem();
     }
 
     private void Update()
     {
-    }
-
-    public void addItem()
-    {
-        createItem.AddItem();
     }
 
     private void PointSpawnItem()
@@ -81,8 +64,10 @@ public class DataShop : MonoBehaviour
 
                         _itemSpawn.name = itemInShop[i].name;
                         _itemSpawn.cost = itemInShop[i].cost;
-                        _itemSpawn.image = itemInShop[i].image;
+                        _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                         _itemSpawn.detail = itemInShop[i].detail;
+                        _itemSpawn.type = itemInShop[i].type.ToString();
+                        _itemSpawn.owner = itemInShop[i].owner;
                     }
                     else if (itemInShop[i].type == TypeItem.EPIC)
                     {
@@ -91,8 +76,10 @@ public class DataShop : MonoBehaviour
 
                         _itemSpawn.name = itemInShop[i].name;
                         _itemSpawn.cost = itemInShop[i].cost;
-                        _itemSpawn.image = itemInShop[i].image;
+                        _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                         _itemSpawn.detail = itemInShop[i].detail;
+                        _itemSpawn.type = itemInShop[i].type.ToString();
+                        _itemSpawn.owner = itemInShop[i].owner;
                     }
                     else
                     {
@@ -101,8 +88,10 @@ public class DataShop : MonoBehaviour
 
                         _itemSpawn.name = itemInShop[i].name;
                         _itemSpawn.cost = itemInShop[i].cost;
-                        _itemSpawn.image = itemInShop[i].image;
+                        _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                         _itemSpawn.detail = itemInShop[i].detail;
+                        _itemSpawn.type = itemInShop[i].type.ToString();
+                        _itemSpawn.owner = itemInShop[i].owner;
                     }
                 }
                 PointSpawnItem();
@@ -122,8 +111,10 @@ public class DataShop : MonoBehaviour
 
                 _itemSpawn.name = itemInShop[i].name;
                 _itemSpawn.cost = itemInShop[i].cost;
-                _itemSpawn.image = itemInShop[i].image;
+                _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                 _itemSpawn.detail = itemInShop[i].detail;
+                _itemSpawn.type = itemInShop[i].type.ToString();
+                _itemSpawn.owner = itemInShop[i].owner;
             }
             else if (itemInShop[i].type == TypeItem.EPIC)
             {
@@ -132,8 +123,10 @@ public class DataShop : MonoBehaviour
 
                 _itemSpawn.name = itemInShop[i].name;
                 _itemSpawn.cost = itemInShop[i].cost;
-                _itemSpawn.image = itemInShop[i].image;
+                _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                 _itemSpawn.detail = itemInShop[i].detail;
+                _itemSpawn.type = itemInShop[i].type.ToString();
+                _itemSpawn.owner = itemInShop[i].owner;
             }
             else
             {
@@ -142,8 +135,10 @@ public class DataShop : MonoBehaviour
 
                 _itemSpawn.name = itemInShop[i].name;
                 _itemSpawn.cost = itemInShop[i].cost;
-                _itemSpawn.image = itemInShop[i].image;
+                _itemSpawn.image = createItem._listImage[itemInShop[i].image];
                 _itemSpawn.detail = itemInShop[i].detail;
+                _itemSpawn.type = itemInShop[i].type.ToString();
+                _itemSpawn.owner = itemInShop[i].owner;
             }
         }
     }

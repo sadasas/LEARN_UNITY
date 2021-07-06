@@ -13,8 +13,8 @@ public class _Item : MonoBehaviour
     [SerializeField] private Text[] nameItem;
     [SerializeField] private Text costItem;
     [SerializeField] private Text typeItem;
-    [SerializeField] private Image imageItem;
-    [SerializeField] private GameObject HUDDetail;
+    [SerializeField] private Image imageItemShop;
+    [SerializeField] private GameObject[] HUDDetail;
 
     //value
 
@@ -23,6 +23,7 @@ public class _Item : MonoBehaviour
     public String detail;
     public int cost;
     public Sprite image;
+    public Owner owner;
 
     private void Awake()
     {
@@ -32,23 +33,28 @@ public class _Item : MonoBehaviour
     private void Start()
     {
         nameItem[0].text = name;
-
         costItem.text = cost.ToString();
-
         typeItem.text = type;
-        imageItem.sprite = image;
+        imageItemShop.sprite = image;
     }
 
     public void ClickDetail()
     {
-        GameObject spawnDetail = Instantiate(HUDDetail, parent.position, Quaternion.identity, parent);
-        Transform namat = spawnDetail.transform.GetChild(0).GetChild(0).transform;
-        Transform detailt = spawnDetail.transform.GetChild(0).GetChild(1).transform;
-        namat.GetComponent<Text>().text = name;
-        detailt.GetComponent<Text>().text = detail;
-    }
-
-    public void BuyItem()
-    {
+        if (owner == Owner.SHOP)
+        {
+            GameObject spawnDetail = Instantiate(HUDDetail[0], parent.position, Quaternion.identity, parent);
+            Transform namat = spawnDetail.transform.GetChild(0).GetChild(0).transform;
+            Transform detailt = spawnDetail.transform.GetChild(0).GetChild(1).transform;
+            namat.GetComponent<Text>().text = name;
+            detailt.GetComponent<Text>().text = detail;
+        }
+        else
+        {
+            GameObject spawnDetail = Instantiate(HUDDetail[1], parent.position, Quaternion.identity, parent);
+            Transform namat = spawnDetail.transform.GetChild(0).GetChild(0).transform;
+            Transform detailt = spawnDetail.transform.GetChild(0).GetChild(1).transform;
+            namat.GetComponent<Text>().text = name;
+            detailt.GetComponent<Text>().text = detail;
+        }
     }
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 [Serializable]
 internal class SaveData
@@ -42,7 +41,7 @@ public enum Exist
     NotHaveData,
 }
 
-public abstract class SaveDaata
+public abstract class DatabasePlayer
 {
     protected static DataPlayer dataPlayer;
     public DataPlayer _dataPlayer { get { return dataPlayer; } }

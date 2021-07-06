@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputData : SaveDaata
+public class InputData : DatabasePlayer
 {
     private Text name;
 
@@ -26,12 +26,14 @@ public class InputData : SaveDaata
         dataPlayer.coin = 1000;
         dataPlayer.experience = 0;
         tier = Tier.Rookie;
+        inventory.itemPlayer = null;
 
         SaveGame();
     }
 
     public void addInventory(Item item)
     {
+        item.owner = Owner.PLAYER;
         inventory.itemPlayer.Add(item);
         SaveGame();
     }

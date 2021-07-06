@@ -1461,10 +1461,13 @@ MonoBehaviour:
   HUD:
   - {fileID: 1991697440}
   - {fileID: 1144608626}
+  dataShop: {fileID: 1550950972}
   dataPlayer:
     nama: 
     coin: 0
     experience: 0
+  itemimage: {fileID: 1550950974}
+  inventoryPlayer: []
 --- !u!4 &656916435
 Transform:
   m_ObjectHideFlags: 0
@@ -2361,6 +2364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550950973}
   - component: {fileID: 1550950972}
+  - component: {fileID: 1550950974}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: ShopManager
@@ -2380,16 +2384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500c234f6e570a04d9e63aae70d48d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemInShop: []
   shopPoint: {fileID: 2080327523}
   pointSpawnPrefab: {fileID: 746781948859882951, guid: 1c9e9f5ae814f5e478aa98b8a6e1dec7, type: 3}
-  pedangEskalibur: {fileID: 21300000, guid: 03bc49cf15ae6874189ed5ab48f44cd1, type: 3}
-  celuritSakti: {fileID: 21300000, guid: 33c8d37e0ccd4774fa6212b256d52332, type: 3}
-  sevenblestLur: {fileID: 21300000, guid: 8938bd2906b475c4bad92ad7e963b124, type: 3}
-  spearMagic: {fileID: 21300000, guid: 7fdac49752844ca4b9e4ef71443bafd6, type: 3}
-  detailPedangEskalibur: aaaaa
-  detailceluritSakti: bbbbbbbbbbb
-  detailsevenblestLur: ddddd
-  detailspearMagic: rrrrrrrrrr
   itemPrefab:
   - {fileID: 1315798965452469489, guid: 5a9b7445986889b4d842d979d2380e8e, type: 3}
   - {fileID: 1315798965452469489, guid: c461c966d9651c44db8217dba5a87de4, type: 3}
@@ -2408,6 +2405,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550950974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550950971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bcfb87c4ea4e44b904acb8daa889c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pedangEskalibur: {fileID: 21300000, guid: 03bc49cf15ae6874189ed5ab48f44cd1, type: 3}
+  celuritSakti: {fileID: 21300000, guid: 33c8d37e0ccd4774fa6212b256d52332, type: 3}
+  sevenblestLur: {fileID: 21300000, guid: 8938bd2906b475c4bad92ad7e963b124, type: 3}
+  spearMagic: {fileID: 21300000, guid: 7fdac49752844ca4b9e4ef71443bafd6, type: 3}
+  detailPedangEskalibur: aaa
+  detailceluritSakti: bbb
+  detailsevenblestLur: ccc
+  detailspearMagic: ddd
 --- !u!1 &1643001043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,9 +3031,9 @@ MonoBehaviour:
     m_Top: 10
     m_Bottom: 10
   m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0

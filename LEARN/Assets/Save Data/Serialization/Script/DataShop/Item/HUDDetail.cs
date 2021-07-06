@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HUDDetail : MonoBehaviour
 {
-    public _Item item;
-
     public void Destroy()
     {
         Destroy(this.gameObject);

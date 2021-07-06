@@ -93,18 +93,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4018198b1521244b9d74ad1408ec5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   nameItem:
   - {fileID: 1315798966164838361}
   - {fileID: 0}
   costItem: {fileID: 1315798965763608268}
   typeItem: {fileID: 1315798966243908948}
-  imageItem: {fileID: 7705420473960624129}
-  HUDDetail: {fileID: 8131242089612696331, guid: 1c80b401e0b883b48be2237e2fd64657, type: 3}
+  imageItemShop: {fileID: 7705420473960624129}
+  HUDDetail:
+  - {fileID: 8131242089612696331, guid: 1c80b401e0b883b48be2237e2fd64657, type: 3}
+  - {fileID: 8131242089612696331, guid: 78d6a329dcad7164b9ad74ec48cf81cb, type: 3}
   type: COMMON
   name: 
   detail: 
   cost: 0
   image: {fileID: 0}
+  owner: 0
 --- !u!1 &1315798965763608266
 GameObject:
   m_ObjectHideFlags: 0

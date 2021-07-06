@@ -24,7 +24,10 @@ public class SLData : MonoBehaviour
 
     [SerializeField] private GameObject[] tierDisplay, HUD;
 
+    [SerializeField] private DataShop dataShop;
+
     public DataPlayer dataPlayer;
+    [SerializeField] private CreateItem itemimage;
 
     public List<Item> inventoryPlayer;
 
@@ -37,11 +40,6 @@ public class SLData : MonoBehaviour
     {
         inputData = new InputData(namePlayer);
         outputData = new OutputData(HUD, namePlayerDisplay, expPlayerDisplay, tierDisplay, coinPlayerDisplay);
-        PointSpawnItem();
-    }
-
-    private void Update()
-    {
     }
 
     public void SaveDataPlayer()
@@ -67,8 +65,7 @@ public class SLData : MonoBehaviour
         outputData.Update();
         dataPlayer = outputData._dataPlayer;
         inventoryPlayer = inputData._inventory.itemPlayer;
-        // Debug.Log(inventoryPlayer.Count);
-        // DisplayInventory();
+        ResetInventoryDisplay();
     }
 
     public void AddXPPlayer()
@@ -86,105 +83,134 @@ public class SLData : MonoBehaviour
     public void Buy(int itemCost, Item item)
     {
         inputData.LostCoin(itemCost);
-        LoadDataPlayer();
         inputData.addInventory(item);
-        DisplayInventory();
+        ResetInventoryDisplay();
     }
 
     private void PointSpawnItem()
     {
-        if (inventoryPoint.transform.childCount == 0 || pointSpawnItem.transform.childCount >= 4)
+        GameObject spawnPoint = Instantiate(pointSpawnPrefab, inventoryPoint.position, inventoryPoint.rotation, inventoryPoint);
+        pointSpawnItem = spawnPoint;
+    }
+
+    private void ResetInventoryDisplay()
+    {
+        int countChild = inventoryPoint.childCount;
+
+        if (countChild > 0)
         {
-            GameObject spawnPoint = Instantiate(pointSpawnPrefab, inventoryPoint.position, inventoryPoint.rotation, inventoryPoint);
-            pointSpawnItem = spawnPoint;
+            for (int i = 0; i < countChild; i++)
+            {
+                GameObject item = inventoryPoint.GetChild(i).gameObject;
+                Destroy(item);
+            }
         }
+
+        LoadDataPlayer();
+        PointSpawnItem();
+        DisplayInventory();
     }
 
     private void DisplayInventory()
     {
         //convert
 
-        float iii = inventoryPlayer.Count / 4.0f;
-        int convert = (int)Mathf.Floor(iii);
-        float sisa = (iii - convert) / 0.25f;
-        int ff = 4;
-
-        if (convert >= 1)
+        if (inventoryPlayer != null)
         {
-            for (int a = 0; a < convert; a++)
+            float iii = inventoryPlayer.Count / 4.0f;
+            int convert = (int)Mathf.Floor(iii);
+            float sisa = (iii - convert) / 0.25f;
+            int ff = 4;
+
+            if (convert >= 1)
             {
-                for (int i = 0; i <= 3; i++)
+                for (int a = 0; a < convert; a++)
                 {
-                    if (inventoryPlayer[i].type == TypeItem.COMMON)
+                    for (int i = 0; i <= 3; i++)
                     {
-                        GameObject itemSpawn = Instantiate(itemPrefab[0], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                        _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+                        if (inventoryPlayer[i].type == TypeItem.COMMON)
+                        {
+                            GameObject itemSpawn = Instantiate(itemPrefab[0], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                            _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
 
-                        _itemSpawn.name = inventoryPlayer[i].name;
-                        _itemSpawn.cost = inventoryPlayer[i].cost;
-                        _itemSpawn.image = inventoryPlayer[i].image;
-                        _itemSpawn.detail = inventoryPlayer[i].detail;
-                    }
-                    else if (inventoryPlayer[i].type == TypeItem.EPIC)
-                    {
-                        GameObject itemSpawn = Instantiate(itemPrefab[1], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                        _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+                            _itemSpawn.name = inventoryPlayer[i].name;
+                            _itemSpawn.cost = inventoryPlayer[i].cost;
+                            _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                            _itemSpawn.detail = inventoryPlayer[i].detail;
+                            _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                            _itemSpawn.owner = inventoryPlayer[i].owner;
+                        }
+                        else if (inventoryPlayer[i].type == TypeItem.EPIC)
+                        {
+                            GameObject itemSpawn = Instantiate(itemPrefab[1], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                            _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
 
-                        _itemSpawn.name = inventoryPlayer[i].name;
-                        _itemSpawn.cost = inventoryPlayer[i].cost;
-                        _itemSpawn.image = inventoryPlayer[i].image;
-                        _itemSpawn.detail = inventoryPlayer[i].detail;
-                    }
-                    else
-                    {
-                        GameObject itemSpawn = Instantiate(itemPrefab[2], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                        _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+                            _itemSpawn.name = inventoryPlayer[i].name;
+                            _itemSpawn.cost = inventoryPlayer[i].cost;
+                            _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                            _itemSpawn.detail = inventoryPlayer[i].detail;
+                            _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                            _itemSpawn.owner = inventoryPlayer[i].owner;
+                        }
+                        else
+                        {
+                            GameObject itemSpawn = Instantiate(itemPrefab[2], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                            _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
 
-                        _itemSpawn.name = inventoryPlayer[i].name;
-                        _itemSpawn.cost = inventoryPlayer[i].cost;
-                        _itemSpawn.image = inventoryPlayer[i].image;
-                        _itemSpawn.detail = inventoryPlayer[i].detail;
+                            _itemSpawn.name = inventoryPlayer[i].name;
+                            _itemSpawn.cost = inventoryPlayer[i].cost;
+                            _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                            _itemSpawn.detail = inventoryPlayer[i].detail;
+                            _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                            _itemSpawn.owner = inventoryPlayer[i].owner;
+                        }
                     }
+                    PointSpawnItem();
                 }
-                PointSpawnItem();
-            }
-        }
-        else
-        {
-            ff = 0;
-        }
-
-        for (int i = ff; i < sisa + ff; i++)
-        {
-            if (inventoryPlayer[i].type == TypeItem.COMMON)
-            {
-                GameObject itemSpawn = Instantiate(itemPrefab[0], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
-
-                _itemSpawn.name = inventoryPlayer[i].name;
-                _itemSpawn.cost = inventoryPlayer[i].cost;
-                _itemSpawn.image = inventoryPlayer[i].image;
-                _itemSpawn.detail = inventoryPlayer[i].detail;
-            }
-            else if (inventoryPlayer[i].type == TypeItem.EPIC)
-            {
-                GameObject itemSpawn = Instantiate(itemPrefab[1], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
-
-                _itemSpawn.name = inventoryPlayer[i].name;
-                _itemSpawn.cost = inventoryPlayer[i].cost;
-                _itemSpawn.image = inventoryPlayer[i].image;
-                _itemSpawn.detail = inventoryPlayer[i].detail;
             }
             else
             {
-                GameObject itemSpawn = Instantiate(itemPrefab[2], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
-                _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+                ff = 0;
+            }
 
-                _itemSpawn.name = inventoryPlayer[i].name;
-                _itemSpawn.cost = inventoryPlayer[i].cost;
-                _itemSpawn.image = inventoryPlayer[i].image;
-                _itemSpawn.detail = inventoryPlayer[i].detail;
+            for (int i = ff; i < sisa + ff; i++)
+            {
+                if (inventoryPlayer[i].type == TypeItem.COMMON)
+                {
+                    GameObject itemSpawn = Instantiate(itemPrefab[0], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                    _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+
+                    _itemSpawn.name = inventoryPlayer[i].name;
+                    _itemSpawn.cost = inventoryPlayer[i].cost;
+                    _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                    _itemSpawn.detail = inventoryPlayer[i].detail;
+                    _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                    _itemSpawn.owner = inventoryPlayer[i].owner;
+                }
+                else if (inventoryPlayer[i].type == TypeItem.EPIC)
+                {
+                    GameObject itemSpawn = Instantiate(itemPrefab[1], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                    _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+
+                    _itemSpawn.name = inventoryPlayer[i].name;
+                    _itemSpawn.cost = inventoryPlayer[i].cost;
+                    _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                    _itemSpawn.detail = inventoryPlayer[i].detail;
+                    _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                    _itemSpawn.owner = inventoryPlayer[i].owner;
+                }
+                else
+                {
+                    GameObject itemSpawn = Instantiate(itemPrefab[2], pointSpawnItem.transform.position, pointSpawnItem.transform.rotation, pointSpawnItem.transform);
+                    _Item _itemSpawn = itemSpawn.GetComponent<_Item>();
+
+                    _itemSpawn.name = inventoryPlayer[i].name;
+                    _itemSpawn.cost = inventoryPlayer[i].cost;
+                    _itemSpawn.image = itemimage._listImage[inventoryPlayer[i].image];
+                    _itemSpawn.detail = inventoryPlayer[i].detail;
+                    _itemSpawn.type = inventoryPlayer[i].type.ToString();
+                    _itemSpawn.owner = inventoryPlayer[i].owner;
+                }
             }
         }
     }

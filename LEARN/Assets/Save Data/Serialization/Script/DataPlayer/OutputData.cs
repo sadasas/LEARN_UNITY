@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OutputData : SaveDaata
+public class OutputData : DatabasePlayer
 {
     private GameObject[] HUD;
 
@@ -22,15 +22,19 @@ public class OutputData : SaveDaata
 
     public override Exist Update()
     {
-        base.Update();
         LoadGame();
         Load();
+
         if (isHaveData == Exist.NotHaveData)
         {
             HUD[0].SetActive(true);
             HUD[1].SetActive(false);
 
             return isHaveData = Exist.NotHaveData;
+        }
+        else
+        {
+            base.Update();
         }
 
         HUD[0].SetActive(false);
