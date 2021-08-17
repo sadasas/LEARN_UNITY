@@ -6,7 +6,8 @@ public class Shooting : MonoBehaviour
 {
     Transform mainCamera;
 
-    [SerializeField] LayerMask objectHit;
+  public static  bool shootPressed;
+  [SerializeField] LayerMask objectHit;
     [SerializeField] GameObject bulletPrefab;
    // [SerializeField] Transform pointShoot;
     [SerializeField] Transform bulletParent;
@@ -21,7 +22,7 @@ public class Shooting : MonoBehaviour
     private void Update()
     {
 
-        bool shootPressed = Input.GetKeyDown(KeyCode.Mouse0);
+       shootPressed = Input.GetKey(KeyCode.Mouse0);
 
         if (shootPressed)
         {
