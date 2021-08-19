@@ -81,7 +81,11 @@ public class TPPControll : MonoBehaviour
        CheckGrounded();
         Movement();
         Jump();
-       
+        if (CameraSwitch.aimPressed) animator.SetLayerWeight(1, 1);
+        else
+        {
+           animator.SetLayerWeight(1, 0);
+        }
 
 
     }

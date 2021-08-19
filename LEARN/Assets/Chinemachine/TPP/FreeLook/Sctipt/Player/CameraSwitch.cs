@@ -8,7 +8,9 @@ public class CameraSwitch : MonoBehaviour
   [SerializeField]  CinemachineVirtualCamera aimCamera;
   [SerializeField] Transform player;
   Transform mainCamera;
-    [SerializeField] Canvas thirdPersonCanvas, aimCanvas;
+  [SerializeField] Canvas thirdPersonCanvas, aimCanvas;
+
+   public static bool aimPressed;
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class CameraSwitch : MonoBehaviour
 
     void SwitchCam()
     {
-        bool aimPressed = Input.GetKey(KeyCode.Mouse1);
+         aimPressed = Input.GetKey(KeyCode.Mouse1);
 
         if(aimPressed)
         {
@@ -33,7 +35,7 @@ public class CameraSwitch : MonoBehaviour
         {
             aimCanvas.enabled = false;
             thirdPersonCanvas.enabled = true;
-            aimCamera.Priority = 9;
+            aimCamera.Priority = 20;
         }
     }
      

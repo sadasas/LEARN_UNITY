@@ -18,23 +18,27 @@ public class RigLayerManager : MonoBehaviour
     private void Update()
     {
         CheckEquipment();
-        if (CheckEquipment())
+
+        if (CheckEquipment() &&!CameraSwitch.aimPressed && !Shooting.shoot)
         {
-           
+
             rigLayerAnimControll.Play("WeaponIdle_" + InventoryPlayer.instance.weaponEquip.GetComponent<WeaponManager>().weaponDetail.nameWeapon);
         }
 
-        if(Shooting.shootPressed )
+        if (CheckEquipment() && Shooting.shoot || CameraSwitch.aimPressed)
         {
+           
+          
             rigLayerAnimControll.SetBool(IDAimingToHash, true);
+           
         }
-
         else
         {
             rigLayerAnimControll.SetBool(IDAimingToHash, false);
         }
-
        
+      
+
 
 
     }
@@ -45,7 +49,7 @@ public class RigLayerManager : MonoBehaviour
         if (InventoryPlayer.instance.weaponEquip != null)
         {
 
-            rigLayerAnimControll.enabled = true;
+           
         }
         else
         {

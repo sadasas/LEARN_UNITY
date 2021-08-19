@@ -6,12 +6,14 @@ public class Shooting : MonoBehaviour
 {
     Transform mainCamera;
 
-  public static  bool shootPressed;
+  public static  bool shoot;
   [SerializeField] LayerMask objectHit;
     [SerializeField] GameObject bulletPrefab;
    // [SerializeField] Transform pointShoot;
     [SerializeField] Transform bulletParent;
     [SerializeField] float bulletMissDisntance;
+    [SerializeField] float fireRate;
+     float _fireRate;
 
 
 
@@ -21,13 +23,28 @@ public class Shooting : MonoBehaviour
     }
     private void Update()
     {
-
-       shootPressed = Input.GetKey(KeyCode.Mouse0);
-
-        if (shootPressed)
+        if(_fireRate>0.0f)
         {
+            _fireRate -= Time.deltaTime;
+        }
+        else
+        { 
+            _fireRate = 0.0f;
+        }
+
+      bool shootPressed = Input.GetKey(KeyCode.Mouse0);
+        
+        if (shootPressed )
+        {
+            shoot = true;
             ChangeDirPlayer();
+            if (_fireRate > 0f) return;
+            _fireRate = fireRate;
             StartShoot();
+        }
+        else
+        {
+            shoot = false;
         }
         
     }
