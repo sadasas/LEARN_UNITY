@@ -7,45 +7,67 @@ using UnityEngine;
 public class TPP_PlayerControl : MonoBehaviour
 {
     CharacterController controller;
-    Animator playerAnimControll;
-
-
+    Animator animator;
 
     //player
    
-    [Header("Player Movement")]
+    [Header("Player Movement ")]
     [Space(10)]
+    [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
     [SerializeField] float speed;
+    [SerializeField] float targetSpeed;
     [SerializeField] float horizontalVelocity;
     [SerializeField] float verticalVelocity;
-    [SerializeField] float angledistance;
+    [SerializeField] Vector3 moveInput;
+    [SerializeField] Vector3 _moveInput;
+    [SerializeField] float speedChangeRate;
+
+
+
+    [Header("Player Rotation")]
+    [Space(10)]
     [SerializeField] float _rotationVelocity;
     [SerializeField] float _smoothTimeRotation;
     [SerializeField]  float angledamp;
     [SerializeField] float angle;
+    [SerializeField] float angledistance;
     [SerializeField] float currentAngle;
-    [SerializeField]  Vector3 moveInput;
-    [SerializeField]  Vector3 _moveInput;
+   
 
    
     [Header("Player Grounded")]
     [Space(10)]
     [SerializeField] bool isGrounded;
     [SerializeField] float groundOffset;
+    [Range(0,1)]
+    [SerializeField] float distanceToGround;
     [SerializeField] Vector3 hitDirection;
+    [SerializeField] LayerMask ground;
 
    
     [Header("PlayerJump")]
     [Space(10)]
     [SerializeField] float jumpHeight;
     [SerializeField] float gravity;
+
+
+    [Header("Animator")]
+    [Space(10)]
+    int IDSpeedToHash;
+    int IDGroundedToHash;
+    [SerializeField] float animationBlend;
+    [SerializeField] float smoothTimeAnimation;
     
 
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        playerAnimControll = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+
+        IDSpeedToHash = Animator.StringToHash("Speed");
+        IDGroundedToHash = Animator.StringToHash("IsGrounded");
     }
 
     private void Update()
@@ -60,21 +82,29 @@ public class TPP_PlayerControl : MonoBehaviour
         //various way to check ground
 
         // default property character controller also have check ground
-       // isGrounded = controller.isGrounded;
+        // isGrounded = controller.isGrounded;
 
         // by physics raycast and bound y of controller
         isGrounded = Physics.Raycast(controller.bounds.center - Vector3.up* controller.bounds.extents.y, -transform.up,  groundOffset);
 
         //by Messages Character controller : OnControllerColliderHit
-       
-        
-           
+
+        animator.SetBool(IDGroundedToHash, isGrounded);
+
+
+          
     }
 
    
     void Movement()
     {
         moveInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+
+        bool runningPressed = Input.GetKey(KeyCode.LeftShift);
+
+        targetSpeed = runningPressed ? runSpeed : walkSpeed;
+
+     
 
         if (moveInput.magnitude > 0.1f)
         {
@@ -106,39 +136,111 @@ public class TPP_PlayerControl : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, _smoothTimeRotation);
 
 
-            //get horizontal velocity by input
-
+            //get horizontal and vertical velocity by input
             verticalVelocity = controller.velocity.y;
-          
+           
             horizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+            //float offset = 0.1f;
+
+          //various way to lerp speed 
+            //by character controller velocity
+           /* if (horizontalVelocity < targetSpeed - offset || horizontalVelocity > speed - offset)
+            {
+                speed = Mathf.Lerp(horizontalVelocity, targetSpeed, Time.deltaTime * speedChangeRate);
+            }*/
+
+            //by speed 
+            speed = Mathf.Lerp(speed, targetSpeed, Time.deltaTime * speedChangeRate);
         }
-        controller.Move(moveInput * (speed * Time.deltaTime )+ new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
+
+        else
+        {
+            targetSpeed = 0f;
+            speed = targetSpeed;
+
+        }
+      
+
+
+        //set anim
+        animationBlend = Mathf.Lerp(animationBlend, speed,Time.deltaTime * speedChangeRate);
+        animator.SetFloat(IDSpeedToHash, animationBlend);
+
+        //set movement and jump
+        controller.Move(moveInput * (speed * Time.deltaTime ) + new Vector3(0,verticalVelocity,0)* Time.deltaTime);
     }
 
     void Jump()
     {
-        
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
        
         if(isGrounded)
         {
-            if(jumpPressed)
+            if(jumpPressed)  
             {
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                animator.SetTrigger("IsJump");
+              
             }
-
+           if (verticalVelocity <0f)verticalVelocity = -3f;
         }
 
-        if (verticalVelocity > 0.0f) verticalVelocity += gravity * Time.deltaTime;
-        if (verticalVelocity <0.0f) verticalVelocity = 0.0f;
-
+         verticalVelocity += gravity * Time.deltaTime;
        
+
+    }
+
+    public void JumpEvent()
+    {
+         verticalVelocity += Mathf.Sqrt(jumpHeight * -3f * gravity);
+        Debug.Log("Jump");
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, animator.GetFloat("IKFootRightWeight"));
+        animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, animator.GetFloat("IKFootRightWeight"));
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, animator.GetFloat("IKFootLeftWeight"));
+        animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, animator.GetFloat("IKFootLeftWeight"));
+
+        RaycastHit hit;
+        Ray ray = new Ray(animator.GetIKPosition(AvatarIKGoal.RightFoot) + Vector3.up , Vector3.down);
+        if(Physics.Raycast(ray,out hit, distanceToGround +1f,ground))
+        {
+         
+            if(hit.transform.tag=="Walkable")
+            {
+              
+                Vector3 footPosition = hit.point;
+                footPosition.y += distanceToGround;
+                animator.SetIKPosition(AvatarIKGoal.RightFoot, footPosition);
+                animator.SetIKRotation(AvatarIKGoal.RightFoot, Quaternion.LookRotation(transform.forward,hit.normal));
+                
+            }
+        }
+
+        ray = new Ray(animator.GetIKPosition(AvatarIKGoal.LeftFoot) + Vector3.up, Vector3.down);
+        if(Physics.Raycast(ray,out hit,distanceToGround +2f,ground))
+        {
+            if(hit.transform.tag=="Walkable")
+            {
+              
+                Vector3 footPosition = hit.point;
+                footPosition.y += distanceToGround;
+                animator.SetIKPosition(AvatarIKGoal.LeftFoot, footPosition);
+                animator.SetIKRotation(AvatarIKGoal.LeftFoot, Quaternion.LookRotation(transform.forward,hit.normal));
+            }
+        }
+
+
+
+        
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(controller.bounds.center - Vector3.up * controller.bounds.extents.y, -transform.up * 100f);
+       /* Gizmos.color = Color.red;
+      //  Gizmos.DrawRay(controller.bounds.center - Vector3.up * controller.bounds.extents.y, -transform.up * 100f);
+        Gizmos.DrawRay(animator.GetIKPosition(AvatarIKGoal.RightFoot), Vector3.down * 1f);*/
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
