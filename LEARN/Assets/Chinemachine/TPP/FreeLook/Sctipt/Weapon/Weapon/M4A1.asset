@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505cbc346dc3999448fae65ba4cbaddf, type: 3}
+  m_Name: M4A1
+  m_EditorClassIdentifier: 
+  nameWeapon: M4A1
+  descriptionWeapon: 
+  damage: 100
+  speed: 10
+  maxAmmo: 50
+  typeAmmo: 1
+  fireRate: 0.47
+  bulletDecal: {fileID: 3168985161066071851, guid: ea9c45e59c45141428edfdd70fec4aff, type: 3}
+  bulletPrefab: {fileID: 2891051527109666813, guid: 7159747da5805334ebdcc9a1982cf059, type: 3}
