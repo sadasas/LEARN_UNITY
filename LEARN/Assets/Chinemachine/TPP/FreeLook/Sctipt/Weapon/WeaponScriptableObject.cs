@@ -11,6 +11,7 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] string descriptionWeapon;
 
     [Space(10)]
+    public int ID;
     public int damage;
     public float speed;
     public int maxAmmo;

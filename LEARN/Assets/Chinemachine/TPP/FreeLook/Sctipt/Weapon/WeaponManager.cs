@@ -5,7 +5,6 @@ using TMPro;
 
 
 [RequireComponent(typeof(WeaponScriptableObject))]
-[RequireComponent(typeof(BoxCollider))]
 public class WeaponManager : MonoBehaviour
 {
 
@@ -102,18 +101,7 @@ public class WeaponManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            transform.position = other.transform.GetChild(0).GetChild(3).GetChild(0).position;
-            transform.rotation = other.transform.GetChild(0).GetChild(3).GetChild(0).rotation;
-            this.GetComponent<BoxCollider>().enabled = false;
-            InventoryPlayer.instance.AddWeapon(this);
-            transform.SetParent(other.transform.GetChild(0).GetChild(3).GetChild(0));
-          
-        }
-    }
+   
 
     private void OnDrawGizmos()
     {
