@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4121533695619886125}
   - component: {fileID: 8069752083933702156}
   - component: {fileID: 8069752083933702155}
-  - component: {fileID: -5218751991613785343}
+  - component: {fileID: -7119038243492715897}
   m_Layer: 5
   m_Name: M4A1_Sprite
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-5218751991613785343
+--- !u!114 &-7119038243492715897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8069752083933702153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333176a5f42b17f4b8d63d929c9263c0, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b19602350867e4c8bcdd259dc2c3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

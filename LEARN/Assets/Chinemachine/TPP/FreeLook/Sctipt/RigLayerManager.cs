@@ -11,11 +11,11 @@ public class RigLayerManager : MonoBehaviour
 
 
 
-   [SerializeField] Rig hand, weapon,bodyAim;
-    bool idleWeapon;
-    bool firstLook;
+    [SerializeField] Rig hand, weapon,bodyAim;
 
+    bool firstLook=true;
     int IDIsAimingToHash;
+  
 
 
     private void Awake()
@@ -27,36 +27,39 @@ public class RigLayerManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         IDIsAimingToHash = Animator.StringToHash("IsAiming");
+     
     }
     private void Update()
     {
-        if (InventoryPlayer.weaponEquip)
+        if (Inventory.weaponEquiped)
         {   
             if (!TPP_PlayerControl.aimPressed && !TPP_PlayerControl.shootPressed && !firstLook)
             {
-                animator.Play("WeaponIdle_" + InventoryPlayer.weaponEquip.GetComponent<WeaponManager>().weaponDetail.nameWeapon);
+                Debug.Log("Idle");
+                animator.Play("WeaponIdle_" + Inventory.weaponEquiped.GetComponent<WeaponManager>().weaponDetail.nameWeapon);
             }
-
-            else
-            {
-
-            }
-
-            if (TPP_PlayerControl.aimPressed && InventoryPlayer.weaponEquip != null && !firstLook || TPP_PlayerControl.shootPressed && InventoryPlayer.weaponEquip != null && !firstLook)
+            if (TPP_PlayerControl.aimPressed && Inventory.weaponEquiped != null && !firstLook || TPP_PlayerControl.shootPressed && Inventory.weaponEquiped != null && !firstLook)
             {
                 animator.SetBool(IDIsAimingToHash, true);
             }
             else
             {
-
                 animator.SetBool(IDIsAimingToHash, false);
                 NotReadyShoot();
             }
+        }
+
+        else
+        {
+         
+            animator.SetBool(IDIsAimingToHash, false);
+            animator.Rebind();
         }
     }
 
     public bool StartLookWeapon()
     {
+        animator.Rebind();
         animator.SetTrigger("IsLook");
         return firstLook = true;
     }
@@ -66,13 +69,13 @@ public class RigLayerManager : MonoBehaviour
         return firstLook = false;
     }
 
-    public bool ReadyShoot()
+    public void ReadyShoot()
     {
-        return InventoryPlayer.weaponEquip.GetComponent<WeaponManager>().readyShoot = true;
+      //  Inventory.weaponEquiped.GetComponent<WeaponManagerr>().Shoot();
     }
 
-    bool NotReadyShoot()
+    void NotReadyShoot()
     {
-        return InventoryPlayer.weaponEquip.GetComponent<WeaponManager>().readyShoot = false;
+        //return Inventory.weaponEquiped.GetComponent<WeaponManager>().readyShoot = false;
     }
 }

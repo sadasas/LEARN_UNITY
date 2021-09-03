@@ -4,11 +4,10 @@ using UnityEngine;
 using TMPro;
 
 
-[RequireComponent(typeof(WeaponScriptableObject))]
-public class WeaponManager : MonoBehaviour
+    public class WeaponManager : MonoBehaviour
 {
 
-    public WeaponScriptableObject weaponDetail;
+    public Weapon weaponDetail;
     [SerializeField] Transform shootStart;
     [SerializeField] LayerMask objectShoot;
     [SerializeField] float distanceMissShot;
@@ -38,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         {
             if(TPP_PlayerControl.reloadPressed)
             {
-                InventoryPlayer.instance.FillAmmo(weaponDetail.maxAmmo,weaponDetail.typeAmmo);
+               // InventoryPlayer.instance.FillAmmo(weaponDetail.maxAmmo,weaponDetail.typeAmmo);
             }
             if (TPP_PlayerControl.shootPressed && _fireRate <= 0f && readyShoot && ammoAvailable > 0)
             {
@@ -64,6 +63,7 @@ public class WeaponManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     void DisplayHUD()

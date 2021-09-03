@@ -5,25 +5,17 @@ using UnityEngine;
 
 
 [System.Serializable]
-public  struct WeaponDatabase
+public  struct ItemDatabase
 {
     public string name;
-    public GameObject weaponPrefab;
-    public GameObject weaponWorldItem;
-    public GameObject weaponSprite;
-}
-public enum AmmoType
-{
-  GUN,
-  SUBMACHINE,
-  RIFFLE
+    public GameObject itemPrefab;
+    public GameObject itemWorldItem;
+    public GameObject itemSprite;
 }
 
 
 
-public abstract class Database  
-{
-
-    protected static List<WeaponDatabase> allWeapon = new List<WeaponDatabase>();
-  
+public abstract class Database
+{ 
+    protected static List<ItemDatabase> allItem = new List<ItemDatabase>();
 }

@@ -15,7 +15,7 @@ public class CameraManager : MonoBehaviour
     }
     private void Update()
     {
-        if(TPP_PlayerControl.aimPressed && InventoryPlayer.weaponEquip!=null)
+        if(TPP_PlayerControl.aimPressed && Inventory.weaponEquiped!=null)
         {
             thirdPersonCamera.Priority = 9;
             aimCamera.Priority = 10;

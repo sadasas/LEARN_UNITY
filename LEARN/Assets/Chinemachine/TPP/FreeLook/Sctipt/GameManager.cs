@@ -4,38 +4,30 @@ using UnityEngine;
 
 public class _DatabaseGM: Database
 {
-   public void AddWeaponDatabase(WeaponDatabase weapon)
+   public void AddItemDatabase(ItemDatabase item)
     {
-        allWeapon.Add(weapon);
-    }
-   public void GetWeaponDatabase(List<WeaponDatabase> weapon)
-    {
-        foreach(WeaponDatabase wp in allWeapon)
-        {
-            weapon.Add(wp);
-        }
+        allItem.Add(item);
     }
 }
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] List<WeaponDatabase> weaponInDatabase;
-    [SerializeField] List<WeaponDatabase> _weaponInDatabase;
-   
+    [SerializeField] List<ItemDatabase> itemInDatabase;
+    
     _DatabaseGM database = new _DatabaseGM();
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        foreach(WeaponDatabase weapon in weaponInDatabase)
+        foreach(ItemDatabase weapon in itemInDatabase)
         {
-            database.AddWeaponDatabase(weapon); 
+            database.AddItemDatabase(weapon); 
         }
     }
 
     private void Start()
     {
-        database.GetWeaponDatabase(_weaponInDatabase);
+     
 
     }
 

@@ -67,6 +67,8 @@ public class TPP_PlayerControl : MonoBehaviour
    public static bool reloadPressed { get; private set; }
    public static bool movePlayer { get; private set; }
 
+   public Canvas a;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -80,6 +82,12 @@ public class TPP_PlayerControl : MonoBehaviour
 
     private void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (a.enabled == false) a.enabled = true;
+            else { a.enabled = false; }
+        }
         Grounded();
         Movement();
         Aiming();
@@ -100,15 +108,12 @@ public class TPP_PlayerControl : MonoBehaviour
     void Aiming()
     {
         aimPressed = Input.GetKey(KeyCode.Mouse1);
-        if (aimPressed && InventoryPlayer.weaponEquip)
+        if (aimPressed && Inventory.weaponEquiped)
         {
-            animator.SetLayerWeight(1, 1);
+
             transform.rotation = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0);
         }
-        else
-        {
-            animator.SetLayerWeight(1, 0);
-        }
+     
     }
     void Pickup()
     {
