@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c639174afaeeae44494998bf1f67710b, type: 3}
+  m_Name: AK47Slot
+  m_EditorClassIdentifier: 
+  itemSlot:
+    item:
+      itemHand: {fileID: 2861952537313446409, guid: 47d27fd92af4f8c429f89a6f1bb84f59, type: 3}
+      itemWorld: {fileID: 5242090447955589628, guid: 8f55b9d96d84f2c449506892ef3e13d6, type: 3}
+      itemSprite: {fileID: 8069752083933702153, guid: 5ef5c360665d1194184a4992e9f0da75, type: 3}
+    quantity: 1
+    itemType: 0
+    ID: 0

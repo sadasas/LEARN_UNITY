@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameWeapon: AK47
   descriptionWeapon: 
-  ID: 1
-  damage: 200
-  speed: 8
+  ID: 0
+  damage: 100
+  speed: 10
   maxAmmo: 100
   typeAmmo: 1
-  fireRate: 0.14
+  fireRate: 0.12
   bulletDecal: {fileID: 3168985161066071851, guid: ea9c45e59c45141428edfdd70fec4aff, type: 3}
   bulletPrefab: {fileID: 2891051527109666813, guid: 7159747da5805334ebdcc9a1982cf059, type: 3}

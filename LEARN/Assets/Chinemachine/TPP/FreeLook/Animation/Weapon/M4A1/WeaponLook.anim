@@ -1919,7 +1919,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 5.883333
-    functionName: EndLookWeapon
+    functionName: IdleState
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
