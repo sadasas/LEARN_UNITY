@@ -1,0 +1,877 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.0f1 (c7b5465681fb) revision 13088070'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 8034 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\app\New folder\2020.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/clone/LEARN_UNITY/LEARN
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+60621
+Successfully changed project path to: E:/clone/LEARN_UNITY/LEARN
+E:/clone/LEARN_UNITY/LEARN
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 75.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.0f1 (c7b5465681fb)
+[Subsystems] Discovering subsystems at path D:/app/New folder/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/clone/LEARN_UNITY/LEARN/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c92)
+    Vendor:   
+    VRAM:     4021 MB
+    Driver:   30.0.14.7111
+Initialize mono
+Mono path[0] = 'D:/app/New folder/2020.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'D:/app/New folder/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/app/New folder/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/app/New folder/2020.3.0f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.003507 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 261.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.515 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002207 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.261 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.69 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.7 MB.
+System memory in use after: 102.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2566.
+Total: 3.230600 ms (FindLiveObjects: 0.303600 ms CreateObjectMapping: 0.156900 ms MarkObjects: 2.618700 ms  DeleteObjects: 0.150100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/Ammo.cs
+  artifactKey: Guid(f37f6dac08154dd41b12d4531699ab55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/Ammo.cs using Guid(f37f6dac08154dd41b12d4531699ab55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cbca7090030f5757c39c9babfde62ab') in 0.354023 seconds
+  Import took 0.358534 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000919 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.955 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2570.
+Total: 3.035700 ms (FindLiveObjects: 0.223700 ms CreateObjectMapping: 0.073200 ms MarkObjects: 2.617300 ms  DeleteObjects: 0.120000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001036 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.951 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2073 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2573.
+Total: 2.579600 ms (FindLiveObjects: 0.228400 ms CreateObjectMapping: 0.082800 ms MarkObjects: 2.173500 ms  DeleteObjects: 0.093300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 627.109419 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/IAmmo.cs
+  artifactKey: Guid(23dcf1291547a5c4b8ac0baca756ea65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/IAmmo.cs using Guid(23dcf1291547a5c4b8ac0baca756ea65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07b6852cca0e5951f384e3f3c9d455e3') in 0.026395 seconds
+  Import took 0.032740 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001152 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.908 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2073 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2576.
+Total: 3.101500 ms (FindLiveObjects: 0.237200 ms CreateObjectMapping: 0.112300 ms MarkObjects: 2.645900 ms  DeleteObjects: 0.104900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 128.925958 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs
+  artifactKey: Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs using Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b397bc94881251b90d7485ecae7bfe94') in 0.008977 seconds
+  Import took 0.013118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.530700 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/ItemPickup.cs
+  artifactKey: Guid(5a588a6857758ef429de2983eed3bf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/ItemPickup.cs using Guid(5a588a6857758ef429de2983eed3bf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b8134dafa4acd736f8986c2afd9fe8') in 0.009501 seconds
+  Import took 0.013704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014231 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/ItemPickup.cs
+  artifactKey: Guid(5a588a6857758ef429de2983eed3bf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/ItemPickup.cs using Guid(5a588a6857758ef429de2983eed3bf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b8134dafa4acd736f8986c2afd9fe8') in 0.004278 seconds
+  Import took 0.009343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.580835 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Weapon/Basea/WeaponBase.cs
+  artifactKey: Guid(b4fa9e579b715d446b7d23ad66e6d320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Weapon/Basea/WeaponBase.cs using Guid(b4fa9e579b715d446b7d23ad66e6d320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29e3f7f2a8803b59ba7c37872f0e4178') in 0.008702 seconds
+  Import took 0.014045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.557888 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Weapon/type
+  artifactKey: Guid(b90093cef40bd3148b101ed715ac5273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Weapon/type using Guid(b90093cef40bd3148b101ed715ac5273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c7a29de881de2daf6dc925eb957fb1a') in 0.007377 seconds
+  Import took 0.011441 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001088 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.007 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2073 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2579.
+Total: 2.575400 ms (FindLiveObjects: 0.215200 ms CreateObjectMapping: 0.089500 ms MarkObjects: 2.170200 ms  DeleteObjects: 0.099600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001084 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.920 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2073 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2582.
+Total: 3.214800 ms (FindLiveObjects: 0.286100 ms CreateObjectMapping: 0.086100 ms MarkObjects: 2.725800 ms  DeleteObjects: 0.114700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 916.618909 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Manager.cs
+  artifactKey: Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Manager.cs using Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c200f0206a15377305374980dc9be60') in 0.012426 seconds
+  Import took 0.018175 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001044 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.118 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2586.
+Total: 4.187800 ms (FindLiveObjects: 0.308000 ms CreateObjectMapping: 0.222900 ms MarkObjects: 3.524500 ms  DeleteObjects: 0.131000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001080 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.919 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2589.
+Total: 3.220100 ms (FindLiveObjects: 0.278800 ms CreateObjectMapping: 0.110100 ms MarkObjects: 2.717900 ms  DeleteObjects: 0.111900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.404668 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Manager.cs
+  artifactKey: Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Manager.cs using Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eff973a9e494aefc1d28585bd927d3d2') in 0.005794 seconds
+  Import took 0.010957 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.159168 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/IManager.cs
+  artifactKey: Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/IManager.cs using Guid(8a5680a3e183ec84182eb59e6f08298d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b458f27283587774616aae17d3049bba') in 0.008128 seconds
+  Import took 0.012890 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001234 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.021 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2592.
+Total: 3.228100 ms (FindLiveObjects: 0.227400 ms CreateObjectMapping: 0.071200 ms MarkObjects: 2.808000 ms  DeleteObjects: 0.120400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001590 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.935 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2595.
+Total: 3.459200 ms (FindLiveObjects: 0.250900 ms CreateObjectMapping: 0.107900 ms MarkObjects: 2.979900 ms  DeleteObjects: 0.118300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.819436 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs
+  artifactKey: Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs using Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d0470aac3e576b21e6653dd410cc3a4') in 0.004960 seconds
+  Import took 0.009142 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001255 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.122 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2598.
+Total: 3.834400 ms (FindLiveObjects: 0.279300 ms CreateObjectMapping: 0.096100 ms MarkObjects: 3.319900 ms  DeleteObjects: 0.137000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002596 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.684 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2601.
+Total: 4.588600 ms (FindLiveObjects: 0.646700 ms CreateObjectMapping: 0.241500 ms MarkObjects: 3.529000 ms  DeleteObjects: 0.161500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001128 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.688 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.8 MB.
+System memory in use after: 99.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2604.
+Total: 9.018700 ms (FindLiveObjects: 0.643700 ms CreateObjectMapping: 0.263000 ms MarkObjects: 7.668800 ms  DeleteObjects: 0.438200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 8600.184102 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset
+  artifactKey: Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset using Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Instance of 45ACP couldn't be created because there is no script with that name.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.ScriptableObject:CreateInstance (string)
+ItemSlotScriptableObject:OnEnable () (at Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs:45)
+
+[Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs line 45]
+
+ -> (artifact id: '783915a27f6ee1180fd4c6f16345440f') in 0.464952 seconds
+  Import took 0.475965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.806223 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/AmmoManager.cs
+  artifactKey: Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/AmmoManager.cs using Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '196bc1f33565de15380982a5c5c0cec1') in 0.007233 seconds
+  Import took 0.011958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027737 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/AmmoManager.cs
+  artifactKey: Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/AmmoManager.cs using Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '196bc1f33565de15380982a5c5c0cec1') in 0.003947 seconds
+  Import took 0.007553 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001589 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.476 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.9 MB.
+System memory in use after: 100.0 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2608.
+Total: 8.588000 ms (FindLiveObjects: 0.441700 ms CreateObjectMapping: 0.168000 ms MarkObjects: 7.548900 ms  DeleteObjects: 0.426300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.997554 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/Ammo.cs
+  artifactKey: Guid(f37f6dac08154dd41b12d4531699ab55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/Ammo.cs using Guid(f37f6dac08154dd41b12d4531699ab55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '718721084e8850ee477bbb993fd9db29') in 0.007989 seconds
+  Import took 0.015113 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001477 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.801 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.0 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2611.
+Total: 8.925500 ms (FindLiveObjects: 0.818600 ms CreateObjectMapping: 0.429800 ms MarkObjects: 7.351700 ms  DeleteObjects: 0.319100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 70.305036 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/AmmoManager.cs
+  artifactKey: Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/AmmoManager.cs using Guid(5313e14aba04a644f932b7035f708692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd199c2386fce602a2a9f9abc90b0cb9') in 0.014988 seconds
+  Import took 0.031484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 62.036695 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset
+  artifactKey: Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset using Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Instance of 45ACPa couldn't be created because there is no script with that name.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.ScriptableObject:CreateInstance (string)
+ItemSlotScriptableObject:OnEnable () (at Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs:45)
+
+[Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs line 45]
+
+ -> (artifact id: '46e5335982e20c5f004119842c21aa11') in 0.038803 seconds
+  Import took 0.046381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025783 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset
+  artifactKey: Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Item/45ACPSlot.asset using Guid(6e83bc56dfbac0a43a130d72ea0654eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Instance of 45ACPa couldn't be created because there is no script with that name.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.ScriptableObject:CreateInstance (string)
+ItemSlotScriptableObject:OnEnable () (at Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs:45)
+
+[Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs line 45]
+
+ -> (artifact id: '46e5335982e20c5f004119842c21aa11') in 0.004296 seconds
+  Import took 0.010484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.474085 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset
+  artifactKey: Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset using Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at AmmoManager.OnEnable () [0x00000] in E:\clone\LEARN_UNITY\LEARN\Assets\Chinemachine\TPP\FreeLook\Sctipt\Ammo\Base\AmmoManager.cs:18 
+
+(Filename: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/AmmoManager.cs Line: 18)
+
+ -> (artifact id: '7c26eac53305f718d577a544a5b0909e') in 0.019750 seconds
+  Import took 0.026024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.044565 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset
+  artifactKey: Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset using Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: Object reference not set to an instance of an object
+  at AmmoManager.OnEnable () [0x00000] in E:\clone\LEARN_UNITY\LEARN\Assets\Chinemachine\TPP\FreeLook\Sctipt\Ammo\Base\AmmoManager.cs:18 
+
+(Filename: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Base/AmmoManager.cs Line: 18)
+
+ -> (artifact id: '7c26eac53305f718d577a544a5b0909e') in 0.005496 seconds
+  Import took 0.012033 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001616 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.395 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2614.
+Total: 5.568400 ms (FindLiveObjects: 0.459500 ms CreateObjectMapping: 0.197100 ms MarkObjects: 4.684300 ms  DeleteObjects: 0.224300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 257.304911 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Inventory/Inventory.cs
+  artifactKey: Guid(a8364b9261a097e4495b60757857491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Inventory/Inventory.cs using Guid(a8364b9261a097e4495b60757857491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d5c1b23141aabbeaae487983515338') in 0.012881 seconds
+  Import took 0.019577 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027295 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Inventory/Inventory.cs
+  artifactKey: Guid(a8364b9261a097e4495b60757857491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Inventory/Inventory.cs using Guid(a8364b9261a097e4495b60757857491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d5c1b23141aabbeaae487983515338') in 0.002153 seconds
+  Import took 0.006430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.052479 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs
+  artifactKey: Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Item/Base/ItemSlotScriptableObject.cs using Guid(c639174afaeeae44494998bf1f67710b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b9a187bb8ff6d1dd50962f44f8daf1f') in 0.002271 seconds
+  Import took 0.009645 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001092 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.042 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2617.
+Total: 8.150400 ms (FindLiveObjects: 0.871600 ms CreateObjectMapping: 0.289800 ms MarkObjects: 6.688300 ms  DeleteObjects: 0.296600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 413.388564 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset
+  artifactKey: Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/New Ammo Manager.asset using Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58fb9ff7a479b64ffcebf439e221c676') in 0.022226 seconds
+  Import took 0.029606 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001603 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.214 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2620.
+Total: 11.671600 ms (FindLiveObjects: 0.702200 ms CreateObjectMapping: 0.378300 ms MarkObjects: 10.061100 ms  DeleteObjects: 0.525900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.454328 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Manager.asset
+  artifactKey: Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Manager.asset using Guid(b44b3ab687cd97945b1ed8392f957ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a5ccd580262b1b052aef286336df9c') in 0.058625 seconds
+  Import took 0.204431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.025441 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Stats.asset
+  artifactKey: Guid(3821255da419c3042b18212690dc2df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Stats.asset using Guid(3821255da419c3042b18212690dc2df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb3b654e2971575c6820ad76a0364860') in 0.012148 seconds
+  Import took 0.018384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.073284 seconds.
+  path: Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Stats.asset
+  artifactKey: Guid(3821255da419c3042b18212690dc2df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chinemachine/TPP/FreeLook/Sctipt/Ammo/Ammo/45ACP_Stats.asset using Guid(3821255da419c3042b18212690dc2df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb3b654e2971575c6820ad76a0364860') in 0.012142 seconds
+  Import took 0.028054 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002370 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.567 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2623.
+Total: 3.353100 ms (FindLiveObjects: 0.254000 ms CreateObjectMapping: 0.085800 ms MarkObjects: 2.881500 ms  DeleteObjects: 0.130000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001022 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.668 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.0 MB.
+System memory in use after: 100.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2626.
+Total: 7.869900 ms (FindLiveObjects: 0.587900 ms CreateObjectMapping: 0.244300 ms MarkObjects: 6.617500 ms  DeleteObjects: 0.416500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002869 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.216 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.1 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2629.
+Total: 4.390400 ms (FindLiveObjects: 0.300100 ms CreateObjectMapping: 0.117500 ms MarkObjects: 3.805000 ms  DeleteObjects: 0.166300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001016 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.220 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.1 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2632.
+Total: 3.233100 ms (FindLiveObjects: 0.319700 ms CreateObjectMapping: 0.097500 ms MarkObjects: 2.701400 ms  DeleteObjects: 0.113700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001585 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.414 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2074 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.1 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2635.
+Total: 5.194400 ms (FindLiveObjects: 0.458700 ms CreateObjectMapping: 0.187800 ms MarkObjects: 4.355700 ms  DeleteObjects: 0.189400 ms)
+

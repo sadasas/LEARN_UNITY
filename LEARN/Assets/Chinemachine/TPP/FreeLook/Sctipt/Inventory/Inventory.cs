@@ -98,7 +98,7 @@ public class Inventory : MonoBehaviour
         if (itemContainer._itemSlot[ID].itemType == ItemType.AMMO)
         {
             Debug.Log(" ammo");
-            itemSprite.GetComponent<IAmmo>().UpdateAmmo(ID);
+           // itemSprite.GetComponent<IAmmo>().UpdateAmmo(ID);
         }
 
         _inventorySlot[ID].GetComponent<InventorySlot>().currentItem = itemSprite.GetComponent<ItemSlotUI>();

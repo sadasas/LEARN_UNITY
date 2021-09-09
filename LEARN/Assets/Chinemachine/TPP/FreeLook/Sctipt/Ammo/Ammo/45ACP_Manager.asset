@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37f6dac08154dd41b12d4531699ab55, type: 3}
-  m_Name: 45ACP2
+  m_Script: {fileID: 11500000, guid: 5313e14aba04a644f932b7035f708692, type: 3}
+  m_Name: New Ammo Manager
   m_EditorClassIdentifier: 
-  type: 1
-  ammo: 100
+  contentsAmmo: {fileID: 11400000, guid: 3821255da419c3042b18212690dc2df1, type: 2}

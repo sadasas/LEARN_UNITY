@@ -3,12 +3,11 @@ using UnityEngine;
 
 
 
-[CreateAssetMenu(menuName ="Ammo")]
+[CreateAssetMenu(menuName ="Ammo/Ammo Stats")]
 public class Ammo :  ScriptableObject
 {
     public AmmoType type;
 
     public int ammo;
 
-  
 }

@@ -1,7 +1,5 @@
 
 
-
-
     public enum AmmoType
     {
         GUN,
@@ -9,13 +7,9 @@
         RIFFLE
     }
 
-    public struct ammoContent
-    {
-        AmmoType type;
-        int ammo;
-    }
     public interface IAmmo
     {
+         void OnStart();
         void AmmoAvailable(int ammo);
         void UpdateAmmo(int ID);
 

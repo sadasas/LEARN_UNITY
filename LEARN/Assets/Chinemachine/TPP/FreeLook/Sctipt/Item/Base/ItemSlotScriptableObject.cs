@@ -7,6 +7,7 @@ using System;
 [Serializable]
  public struct Item
 {
+  public string name;
   public  GameObject itemHand;
   public  GameObject itemWorld;
   public  GameObject itemSprite;
@@ -23,13 +24,27 @@ public enum ItemType
 public struct ItemSlot
 {
     public Item item;
-    public int quantity;
+
     public ItemType itemType;
-    public int ID;
+    public int quantity { get; set; }
+    public int ID { get; set; }
+
+    public ScriptableObject manager;
+
 }
 
 [CreateAssetMenu(menuName ="ItemSlot",fileName ="New Item")]
 public class ItemSlotScriptableObject : ScriptableObject
 {
   public ItemSlot itemSlot;
+
+    public  void UpdateSlot()
+    {
+        if(itemSlot.itemType == ItemType.AMMO)
+        {
+            itemSlot.manager = ScriptableObject.CreateInstance("AmmoManager");
+        }
+    }
+        
+    
 }

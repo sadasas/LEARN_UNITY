@@ -24,6 +24,7 @@ namespace Weapons
 
         public virtual void OnEnable()
         {
+
             Setup();
             readyShoot = false;
         }
@@ -33,19 +34,28 @@ namespace Weapons
             _ammoAvailable--;
             Setup();
         }
-        public virtual AmmoManager FillAmmo(AmmoManager ammo)
+        public virtual IAmmo FillAmmo(IAmmo ammo )
         {
-            if (ammo.ammoType != ammoType) return ammo; 
-            _ammoNedded = _ammoMax - _ammoAvailable;
-            if (ammo.ammo > _ammoNedded)
-            {
-                _ammoAvailable += _ammoNedded;
-            }
 
-            else
+            if(ammo as AmmoManager)
             {
-                _ammoAvailable += ammo.ammo;
-                _ammoNedded = ammo.ammo;
+                AmmoManager a = ammo as AmmoManager;
+                
+                if (a.ammoType != ammoType) return a;
+
+                _ammoNedded = _ammoMax - _ammoAvailable;
+
+                if (a.ammo > _ammoNedded)
+                {
+                    _ammoAvailable += _ammoNedded;
+                }
+
+                else
+                {
+                    _ammoAvailable += a.ammo;
+                    _ammoNedded = a.ammo;
+                }
+
             }
 
             ammo.AmmoAvailable(_ammoNedded);

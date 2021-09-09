@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSlot:
     item:
+      name: 45ACP
       itemHand: {fileID: 0}
       itemWorld: {fileID: 8243713359291096794, guid: ec3f5293f6d1ebe4bb2334d488130010, type: 3}
       itemSprite: {fileID: 8069752083933702153, guid: 77dda5961ffa3ed46ac54fd63755a0ad, type: 3}
-    quantity: 0
     itemType: 1
-    ID: 0
