@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Ammo/Ammo Manager")]
-public class AmmoManager : ScriptableObject, IAmmo
+public class AmmoManager : MonoBehaviour, IAmmo
 {
 
     [SerializeField] Ammo contentsAmmo;

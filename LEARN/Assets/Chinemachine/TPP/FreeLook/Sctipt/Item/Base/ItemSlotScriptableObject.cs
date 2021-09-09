@@ -29,7 +29,7 @@ public struct ItemSlot
     public int quantity { get; set; }
     public int ID { get; set; }
 
-    public ScriptableObject manager;
+
 
 }
 
@@ -38,13 +38,5 @@ public class ItemSlotScriptableObject : ScriptableObject
 {
   public ItemSlot itemSlot;
 
-    public  void UpdateSlot()
-    {
-        if(itemSlot.itemType == ItemType.AMMO)
-        {
-            itemSlot.manager = ScriptableObject.CreateInstance("AmmoManager");
-        }
-    }
-        
-    
+   
 }

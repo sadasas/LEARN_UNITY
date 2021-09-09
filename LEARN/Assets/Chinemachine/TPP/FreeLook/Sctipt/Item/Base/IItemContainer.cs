@@ -5,6 +5,6 @@ using UnityEngine;
 
 public interface IItemContainer
 {
-    void AddItemSlot(ItemSlotScriptableObject itemSlot);
+    void AddItemSlot(ItemSlot itemSlot);
     void RemoveItemSlot(int ID);
 }
