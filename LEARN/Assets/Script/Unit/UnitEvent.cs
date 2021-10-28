@@ -7,5 +7,6 @@ public class UnitEvent : MonoBehaviour
 {
     public Action<int> shootEvent;
     public Func<bool,bool> healingEvent;
+    public Func<Item, Sprite> popupItemEvent;
 
 }

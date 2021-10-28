@@ -6,6 +6,12 @@ TagManager:
   tags:
   - ff
   - Wall
+  - Item
+  - PointSpawn
+  - PointPatrol
+  - PointCover
+  - UnitParent
+  - HUDStage
   layers:
   - Default
   - TransparentFX

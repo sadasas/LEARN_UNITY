@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c9ea5c2198eb4ba488c3e6949babfce4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - unitPrefab: {fileID: 1635035346144136726, guid: 0b036bae7b10dae4caaac8bf70cfe1d0, type: 3}
+  - loadingScreenHUDPrefab: {instanceID: 0}
+  - HUDParent: {instanceID: 0}
+  - typeBrain: {fileID: 11400000, guid: 1dee5c685aa55b64f871fc8227a35e46, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

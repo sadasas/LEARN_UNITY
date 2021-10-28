@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43e3e0cb181bb64c923f5d175f0b28d, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: 
+  poinPatrol: []
+  rangeSearchPatrol: 20
+  targetSearch: Player
+  agentStoppingDistance: 0.71
+  timeReloadReset: 1.4
+  distanceShoot: 10.69
+  distanceBetweenShoot: 2.68
+  minHealth: 24.8
+  healthPlus: 10
+  delay: 2
+  unitCovers: []
+  bestCoverSpot: {fileID: 0}
+  rangeSearchItem: 10
