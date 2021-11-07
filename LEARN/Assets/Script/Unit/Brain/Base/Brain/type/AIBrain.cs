@@ -20,14 +20,17 @@ public class AIBrain : Brain
 {
 
     NavMeshAgent agent;
-   
+
+
+    public TypeBrain brain;
 
     //patrol
     [Header("Patrol")]
     [SerializeField] List<Transform> poinPatrol;
-    [Range(10, 20)]
+  /*  [Range(10, 50)]
+    [Tooltip("Sniper betwen 20 and 50 \n Normal max 20")]
     [SerializeField] float rangeSearchPatrol;
-    [SerializeField] string targetSearch;
+    [SerializeField] string targetSearch;*/
 
     //chase
     [Header("Chase")]
@@ -35,13 +38,13 @@ public class AIBrain : Brain
     [SerializeField] float agentStoppingDistance;
 
     //shoot
-    [Header("Shoot")]
+  /*  [Header("Shoot")]
     [Range(0, 5)]
     [SerializeField] float timeReloadReset;
     [Range(10, 15)]
     [SerializeField] float distanceShoot;
     [Range(1, 5)]
-    [SerializeField] float distanceBetweenShoot;
+    [SerializeField] float distanceBetweenShoot;*/
 
     //Health
     [Header("Health")]
@@ -83,6 +86,7 @@ public class AIBrain : Brain
     {
         agent = this.GetComponent<NavMeshAgent>();
 
+        GetComponent<UnitShoot>().typeShoot = brain.shoot;
 
         SearchPointPatrol();
         SearchPointCover();
@@ -100,18 +104,17 @@ public class AIBrain : Brain
 
         goToCoverState = new GoToCoverNode(agent, this);
 
-        rangeChaseState = new RangeNode(agent, rangeSearchPatrol, agentStoppingDistance, targetSearch);
+        rangeChaseState = new RangeNode(agent,brain.target.rangeSearchPatrol, agentStoppingDistance,  brain.target.targetSearch);
 
         patrolSate = new PatrolNode(poinPatrol, agent);
 
         chaseState = new ChaseNode(agent, agentStoppingDistance);
 
-        shootState = new ShootNode(agent, this.gameObject.GetComponent<UnitEvent>(), distanceShoot, timeReloadReset, distanceBetweenShoot, rangeSearchPatrol);
+        shootState = new ShootNode(agent, this.gameObject.GetComponent<UnitEvent>(), brain.shoot.setting.distanceShoot, brain.shoot.setting.timeReloadReset, brain.shoot.setting.distanceBetweenShoot, brain.target.rangeSearchPatrol);
 
         healingState = new HealingNode(this.gameObject.GetComponent<UnitEvent>(), this.gameObject.GetComponent<UnitHealth>(), healthPlus, delay);
 
         searchItemState = new SearchItemNode(rangeSearchItem, agent);
-
 
 
         //group state

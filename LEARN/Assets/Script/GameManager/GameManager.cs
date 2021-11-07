@@ -3,15 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public struct CustomGame
-{
-   public int unitEnemy;
-   public int unitPlayer;
-   public int map;
-   public List<GameObject> unitGameobject;
-  
-}
-
 
 
 /*
@@ -28,19 +19,17 @@ NOTE : ANOYING SINGLETON
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+
+
     CustomGame cg = new CustomGame();
 
 
-    [Header("All Scene In Game")]
-    [SerializeField] string[] allScene;
+    [SerializeField] ResourceHandler resource;
+    [SerializeField]  Transform HUDParent;
 
-
-    [SerializeField]GameObject loadingScreenHUDPrefab;
-    [SerializeField] GameObject[] unitPrefab;
-    [SerializeField] Transform HUDParent;
-
-
-    [SerializeField] Brain[] typeBrain;
+    //setup stage
+    List<Transform> spawnPoint;
+    Transform unitParent;
 
 
     private void OnEnable()
@@ -52,47 +41,47 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        GameEvent.instance.playCustomGame += PlayCustomGame;
-        GameEvent.instance.SaveSettingCustomGame += SaveSetting;
+
+        //custom game
+        //GameEvent.instance.playCustomGame += PlayCustomGame;
+       GameEvent.instance.SaveSettingCustomGame += PlayCustomGame;
     }
-    private void Update()
-    {
-       DetecScene();
-    }
+  
 
 
-
-    CustomGame PlayCustomGame( int unitPlayer)
+    #region Custom Game
+    CustomGame PlayCustomGame(CustomGame customGame)
     {
       
-        cg.unitPlayer = unitPlayer;
+        cg.player.unitPlayer =  1;
+        cg.player.typeUnit = customGame.player.typeUnit;
+        cg.player.typeShoot =  customGame.player.typeShoot;
+        cg.map = customGame.map;
+        cg.ai.unitEnemy = customGame.ai.unitEnemy;
+        cg.ai.typeShoot = customGame.ai.typeShoot;
         StartCoroutine(LoadScene(cg.map));
         return cg;
     }
 
     CustomGame SaveSetting(int unitEnemy, int map)
     {
-        cg.unitEnemy = unitEnemy;
+        cg.ai.unitEnemy = unitEnemy;
         cg.map = map;
         
         return cg;
     }
+    #endregion
 
+  
 
-    void DetecScene()
-    {
-        string currentScene = SceneManager.GetActiveScene().name;
-        if(currentScene == allScene[1])
-        {
-            SetupStage();
-        }
-    }
-
+    #region Setup Stage
     void SetupStage()
     {
+      
+
         GameObject[] gameobject = FindObjectsOfType<GameObject>();
-        List<Transform> spawnPoint= new List<Transform>();
-        Transform unitParent = GameObject.FindGameObjectWithTag("UnitParent").transform;
+         spawnPoint= new List<Transform>();
+        unitParent = GameObject.FindGameObjectWithTag("UnitParent").transform;
         foreach (var allobject in gameobject)
         {
             if (allobject.transform.CompareTag("PointSpawn"))
@@ -101,41 +90,68 @@ public class GameManager : MonoBehaviour
                    
             }
         }
+        SpawnUnit();
 
-      
-        if(cg.unitGameobject==null)
+    }
+
+    void SpawnUnit()
+    {
+        if (cg.unitGameobject == null)
         {
             cg.unitGameobject = new List<GameObject>();
             int spawnPointUsed = 0;
-
+            
             //spawn enemy
-            for (int i = 0; i < cg.unitEnemy; i++)
+            for (int i = 0; i < cg.ai.unitEnemy; i++)
             {
-                GameObject unit =  Instantiate(unitPrefab[1], spawnPoint[spawnPointUsed].position, Quaternion.identity, unitParent);
-              //  unit.GetComponent<UnitBrain>().typeBrain = typeBrain[1];
-                spawnPointUsed++;
-              
-              cg.unitGameobject.Add(unit);
-            }
-            //spawn player
-            for (int i = 0; i < cg.unitPlayer; i++)
-            {
-                GameObject unit = Instantiate(unitPrefab[0], spawnPoint[spawnPointUsed].position, Quaternion.identity, unitParent);
-               // unit.GetComponent<UnitBrain>().typeBrain = typeBrain[0];
+               int typeShoot = 0;
+                switch ( cg.ai.typeShoot[i])
+                {
+                    case TypeShoot.NORMAL:
+                        typeShoot = 0;
+                        break;
+                    case TypeShoot.SNIPER:
+                        typeShoot = 1;
+                        break;
+                }
+                GameObject unit = Instantiate(resource.unitAIPrefab[0], spawnPoint[spawnPointUsed].position, Quaternion.identity, unitParent);
+                unit.gameObject.GetComponent<AIBrain>().brain = resource.typeBrain[typeShoot];
                 spawnPointUsed++;
 
                 cg.unitGameobject.Add(unit);
             }
+            //spawn player
+            for (int i = 0; i < cg.player.unitPlayer; i++)
+            {
+                GameObject unit;
+                switch (cg.player.typeUnit)
+                {
+                    case TypeUnit.HACKER:
+                         unit = Instantiate(resource.unitPlayerPrefab[0], spawnPoint[spawnPointUsed].position, Quaternion.identity, unitParent);
+                        unit.gameObject.GetComponent<PlayerBrain>().brain = resource.typeBrain[0];
+                        cg.unitGameobject.Add(unit);
+                        break;
+                    case TypeUnit.SNIPER:
+                         unit = Instantiate(resource.unitPlayerPrefab[1], spawnPoint[spawnPointUsed].position, Quaternion.identity, unitParent);
+                        unit.gameObject.GetComponent<PlayerBrain>().brain = resource.typeBrain[0];
+                        cg.unitGameobject.Add(unit);
+                        break;
+                }
+               
+                
+                spawnPointUsed++;
+
+               
+            }
 
         }
     }
-
-
+    #endregion
 
     IEnumerator LoadScene(int number)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(allScene[number]);
-        GameObject loadingScreen = Instantiate(loadingScreenHUDPrefab, HUDParent);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(resource.allScene[number]);
+        GameObject loadingScreen = Instantiate(resource.loadingScreenHUDPrefab, HUDParent);
         loadingScreen.SetActive(false);
 
         while (!asyncLoad.isDone)
@@ -146,7 +162,8 @@ public class GameManager : MonoBehaviour
         }
         loadingScreen.SetActive(false);
 
-
+        SetupStage();
+        
         yield return null;
     }
 }

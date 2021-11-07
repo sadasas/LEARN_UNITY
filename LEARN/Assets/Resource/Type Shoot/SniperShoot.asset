@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b308fa7e1b6fe048b4e7b1040f4daa3, type: 3}
+  m_Name: SniperShoot
+  m_EditorClassIdentifier: 
+  setting:
+    typeShoot: 0
+    timeReloadReset: 5
+    distanceShoot: 35
+    distanceBetweenShoot: 5
+  bulletPrefab: {fileID: -2461726597741481031, guid: da047d8b99a603b42a1cbc888e1a6d8a, type: 3}
+  velocityForward: 16
+  velocityUpward: 0
+  plusVelocityForward: 3
+  plusVelocityUpward: 0

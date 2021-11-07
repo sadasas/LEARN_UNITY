@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a42f77408b233c4c8b143cb7b22deaf, type: 3}
+  m_Name: HackerBrain
+  m_EditorClassIdentifier: 
+  target:
+    rangeSearchPatrol: 20
+    targetSearch: Player
+  skill: {fileID: 11400000, guid: 2c0ba9b46ef32a847b5ccdfac2d6e580, type: 2}
+  shoot: {fileID: 11400000, guid: a84d9a68fd1bf7f4890f00f371b94391, type: 2}

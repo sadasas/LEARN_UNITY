@@ -42,7 +42,7 @@ public class ShootNode : Node
 
             if (_agent.hasPath) _agent.ResetPath();
             float distance = Vector3.Distance(target.position, _agent.transform.position);
-              //  Debug.Log(distance);
+               Debug.Log(distance);
 
                 //calculate
                 float _input = _distanceShoot + _distanceBetweenShoot;
@@ -63,18 +63,22 @@ public class ShootNode : Node
                             {
                                 _timeReload = _timeReloadReset;
                                 if(distance <_distanceShoot - _distanceBetweenShoot *2)
-                                {
-                                     // Debug.Log("SHOOTNODE:Short shoot");
+                                 {
+                                        Debug.Log(_distanceShoot - _distanceBetweenShoot * 2);
+                                      Debug.Log("SHOOTNODE:Short shoot");
                                         _unitEvent.shootEvent?.Invoke(1);
                                 }
                                 else if( distance > _distanceShoot - _distanceBetweenShoot * 2 && distance < _distanceShoot - _distanceBetweenShoot)
                                 {
-                                     //  Debug.Log("SHOOTNODE:Medium shoot");
+                                        Debug.Log(_distanceShoot - _distanceBetweenShoot * 2 + _distanceShoot - _distanceBetweenShoot);
+                                        Debug.Log("SHOOTNODE:Medium shoot");
                                         _unitEvent.shootEvent?.Invoke(2);
                                 }
                                 else 
                                 {
-                                     // Debug.Log("SHOOTNODE:Long shoot");
+
+                                        Debug.Log( _distanceShoot + _distanceBetweenShoot);
+                                        Debug.Log("SHOOTNODE:Long shoot");
                                         _unitEvent.shootEvent?.Invoke(3);
                                 }
                                

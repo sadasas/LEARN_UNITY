@@ -13,7 +13,7 @@ public class PlayerBrain : Brain
     Vector3 move;
 
 
-    [SerializeField] SkillBrain skill;
+    public TypeBrain brain;
 
     [Header("Movement")]
     [Space(10)]
@@ -24,9 +24,9 @@ public class PlayerBrain : Brain
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         unitEvent = this.gameObject.GetComponent<UnitEvent>();
+        GetComponent<UnitShoot>().typeShoot = brain.shoot;
 
-
-        skill.Starting();
+        brain.skill.Starting();
     }
 
     public override void Think()
@@ -35,7 +35,7 @@ public class PlayerBrain : Brain
         Steer();
         Shoot();
 
-        skill.SkillOne();
+        brain.skill.SkillOne();
     }
 
     void Steer()

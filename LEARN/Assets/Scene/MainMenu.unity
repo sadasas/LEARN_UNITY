@@ -237,10 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da4ee8ac4171df4d8a21c0260d9a50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HUD:
-  - {fileID: 6486550600492416048, guid: 6bd6644d4c4f24b4fa85660b2fc75eb6, type: 3}
-  - {fileID: 6097495920128179177, guid: 027695f195cb0014ca3c8c75d5a2e63a, type: 3}
-  - {fileID: 3421062613916247094, guid: c490bd057ae8a3043a59ddf071414db1, type: 3}
+  rh: {fileID: 11400000, guid: 95b13f23ea3c88d40bab334278040434, type: 2}
   HUDParent: {fileID: 1820877451}
 --- !u!1 &1433958527
 GameObject:
@@ -370,8 +367,8 @@ Camera:
   m_GameObject: {fileID: 1690622385}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.9137255, g: 0.44313726, b: 0.44313726, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -528,7 +525,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820877450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -688,17 +685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ea5c2198eb4ba488c3e6949babfce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allScene:
-  - MainMenu
-  - Stage
-  loadingScreenHUDPrefab: {fileID: 1828794469402914005, guid: 049ccd7d7ddd8fe45a36a6187aec98f3, type: 3}
-  unitPrefab:
-  - {fileID: 1635035346144136726, guid: bf37aac318a43654bafeadc5edb5a92b, type: 3}
-  - {fileID: 1635035346144136726, guid: 0b036bae7b10dae4caaac8bf70cfe1d0, type: 3}
+  resource: {fileID: 11400000, guid: 95b13f23ea3c88d40bab334278040434, type: 2}
   HUDParent: {fileID: 1945825411}
-  typeBrain:
-  - {fileID: 11400000, guid: f3b992674940fd04b8665095dbea1133, type: 2}
-  - {fileID: 11400000, guid: 1dee5c685aa55b64f871fc8227a35e46, type: 2}
 --- !u!4 &2023199232
 Transform:
   m_ObjectHideFlags: 0
@@ -743,7 +731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2043207955
 RectTransform:
   m_ObjectHideFlags: 0

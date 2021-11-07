@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc8faa522d66c24197b32fbda440ce4, type: 3}
+  m_Name: Resource
+  m_EditorClassIdentifier: 
+  loadingScreenHUDPrefab: {fileID: 1828794469402914005, guid: 049ccd7d7ddd8fe45a36a6187aec98f3, type: 3}
+  typeEnemyHUDPrefab: {fileID: 8953477967409162616, guid: 0ca646ace70a4584594f53be41675d44, type: 3}
+  limitEnemyHUDPrefab: {fileID: 3465054431260748830, guid: 9c1e97c04246a61479a59df08a989b9b, type: 3}
+  allcustomGameHUDPrefab:
+  - {fileID: 6486550600492416048, guid: 6bd6644d4c4f24b4fa85660b2fc75eb6, type: 3}
+  - {fileID: 6097495920128179177, guid: 027695f195cb0014ca3c8c75d5a2e63a, type: 3}
+  - {fileID: 7285760651738239109, guid: baff4d67d1b9eac4eb07e367bc233eaf, type: 3}
+  - {fileID: 3421062613916247094, guid: c490bd057ae8a3043a59ddf071414db1, type: 3}
+  unitPlayerPrefab:
+  - {fileID: 1635035346144136726, guid: bf37aac318a43654bafeadc5edb5a92b, type: 3}
+  - {fileID: 1635035346144136726, guid: 9a0451f02a3d9bd4d92987403cefd9a0, type: 3}
+  unitDisplayPrefab:
+  - {fileID: 1635035346144136726, guid: 9f87518889715934cb1d2aaecde88e50, type: 3}
+  - {fileID: 1635035346144136726, guid: 594815311db367942afff8101345a744, type: 3}
+  unitAIPrefab:
+  - {fileID: 1635035346144136726, guid: 016739a644ca0c84aab283226281031d, type: 3}
+  - {fileID: 1635035346144136726, guid: 0b036bae7b10dae4caaac8bf70cfe1d0, type: 3}
+  allScene:
+  - MainMenu
+  - Stage
+  typeBrain:
+  - {fileID: 11400000, guid: f83f0f4420de2c34f9982bfd3a2d0c9f, type: 2}
+  - {fileID: 11400000, guid: a01adbd280885bd49bb860491fdf0571, type: 2}
+  typeShoot:
+  - {fileID: 11400000, guid: a84d9a68fd1bf7f4890f00f371b94391, type: 2}
+  - {fileID: 0}
+  mapPriviewVidio:
+  - {fileID: 32900000, guid: 277fd7622ff3c9f4480169d424f038f3, type: 3}
+  - {fileID: 32900000, guid: a1d52a0565c1c4f43bd1a903ee00f09e, type: 3}

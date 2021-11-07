@@ -10,8 +10,8 @@ using UnityEngine;
  */
 public class MenuManager : MonoBehaviour
 {
-   
-    [SerializeField] GameObject[] HUD;
+
+    [SerializeField] ResourceHandler rh;
     [SerializeField] Transform HUDParent;
    
 
@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        currentHUD = Instantiate(HUD[0], this.transform);
+        currentHUD = Instantiate(rh.allcustomGameHUDPrefab[0], this.transform);
         GameEvent.instance.SwitchHUD += Switch;
     }
 
@@ -29,9 +29,10 @@ public class MenuManager : MonoBehaviour
     {
         if(currentHUD != null) Destroy(currentHUD);
 
-        if(number==0) currentHUD = Instantiate(HUD[0], HUDParent);
-        else if(number==1) currentHUD = Instantiate(HUD[1], HUDParent);
-        else if(number==2) currentHUD = Instantiate(HUD[2], HUDParent);
+        if(number==0) currentHUD = Instantiate(rh.allcustomGameHUDPrefab[0], HUDParent);
+        else if(number==1) currentHUD = Instantiate(rh.allcustomGameHUDPrefab[1], HUDParent);
+        else if(number==2) currentHUD = Instantiate(rh.allcustomGameHUDPrefab[2], HUDParent);
+        else if(number==3) currentHUD = Instantiate(rh.allcustomGameHUDPrefab[3], HUDParent);
 
     }
 

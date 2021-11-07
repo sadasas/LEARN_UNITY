@@ -11,7 +11,7 @@ public class GameEvent : MonoBehaviour
     public static GameEvent instance;
 
     public Func<int, CustomGame> playCustomGame;
-    public Func<int,int, CustomGame> SaveSettingCustomGame;
+    public Func<CustomGame, CustomGame> SaveSettingCustomGame;
 
     public Action<int> SwitchHUD;
     public Action playCustomBtn;

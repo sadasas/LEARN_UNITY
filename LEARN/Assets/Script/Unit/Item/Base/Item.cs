@@ -10,12 +10,17 @@ public enum ItemType
  public struct ItemContainer
 {
     public  ItemType itemtype;
-   public Sprite imageSprite;
+    public Sprite imageSprite;
+    public string name, description, abilty, skill;
 
-    public ItemContainer(ItemType _itemtype, Sprite _imageSprite)
+    public ItemContainer(ItemType _itemtype, Sprite _imageSprite, string _Name, string _Description, string _Abilty, string _Skill)
     {
         this.itemtype = _itemtype;
         this.imageSprite = _imageSprite;
+        this.name = _Name;
+        this.description = _Description;
+        this.abilty = _Abilty;
+        this.skill = _Skill;
     }
 
 }
